@@ -1,121 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Orange Forge AI, LLC - Intelligent software solutions for personal health tracking and AI-powered applications.">
-    <meta name="keywords" content="AI, software development, health tracking, Texas">
-    <title>Orange Forge AI, LLC - Intelligent Software Solutions</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Orange Forge AI builds on-device software, including a privacy-minded mole tracking app in development for iPhone.">
+    <meta name="theme-color" content="#f37100">
+    <title>Orange Forge AI | 100% User-Owned Data</title>
+    <link rel="icon" type="image/png" href="assets/brand/logo.png">
+    <link rel="apple-touch-icon" href="assets/brand/logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="navbar-container">
-                <div class="navbar-brand">
-                    <span class="company-name">Orange Forge AI, LLC</span>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#product" class="nav-link">Product</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <nav class="navbar" aria-label="Primary navigation">
+            <a class="brand-link" href="index.html#home" aria-label="Orange Forge AI home">
+                <img class="brand-mark" src="assets/brand/logo.png" alt="" width="48" height="48">
+                <span class="brand-text">Orange Forge AI<sup>TM</sup></span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+                <span class="menu-toggle-line"></span>
+                <span class="menu-toggle-line"></span>
+                <span class="menu-toggle-line"></span>
+                <span class="screen-reader-text">Toggle menu</span>
+            </button>
+
+            <ul class="nav-menu" id="primary-menu">
+                <li><a href="#product">App</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="#company">Company</a></li>
+                <li><a href="privacy.html">Policy</a></li>
+                <li><a class="nav-contact" href="mailto:support@orangeforgeai.com">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Intelligent Software Solutions</h1>
-            <p class="hero-subtitle">Developing cutting-edge AI-powered applications for a smarter tomorrow</p>
-            <a href="#product" class="cta-button">Discover Our Technology</a>
-        </div>
-    </section>
+    <main id="main">
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <p class="eyebrow">100% User-Owned Data</p>
+                <h1 id="hero-title">Orange Forge AI<sup>TM</sup></h1>
+                <p class="hero-copy">
+                    On-device software for personal records, practical AI assistance, and user-controlled data.
+                </p>
+                <div class="hero-actions" aria-label="Primary actions">
+                    <a class="button button-primary" href="#product">View the app</a>
+                    <a class="button button-secondary" href="privacy.html">Read privacy policy</a>
+                </div>
+            </div>
+        </section>
 
-    <!-- Product Spotlight Section -->
-    <section id="product" class="product-section">
-        <div class="product-container">
-            <h2 class="section-title">Our Flagship Product</h2>
-            <div class="product-card">
-                <div class="product-content">
-                    <h3>AI-Powered Personal Tracking Tool</h3>
-                    <p class="product-description">
-                        Our flagship product is an innovative AI-powered personal tracking tool that enables users to monitor skin changes over time. With intuitive photography and advanced analytics, users can maintain a comprehensive visual history of their health journey, supported by intelligent insights and trend analysis.
+        <section class="section product-section" id="product" aria-labelledby="product-title">
+            <div class="section-layout">
+                <div class="section-copy">
+                    <p class="eyebrow">App in development</p>
+                    <h2 id="product-title">A mole tracking app for careful personal records.</h2>
+                    <p>
+                        The first planned app from <span class="brand-inline">Orange Forge AI<sup>TM</sup></span> helps people photograph moles, record notes, and compare changes over time from their own iPhone.
                     </p>
-                    
-                    <!-- Disclaimer Badge -->
-                    <div class="disclaimer-badge">
-                        <svg class="disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"></path>
-                            <path d="M12 9v4"></path>
-                            <path d="M12 17h.01"></path>
-                        </svg>
-                        <p class="disclaimer-text"><strong>Disclaimer:</strong> For personal tracking purposes only. Not intended for medical diagnosis, advice, or treatment.</p>
-                    </div>
-
-                    <div class="product-features">
-                        <h4>Key Features</h4>
-                        <ul>
-                            <li>Advanced image processing and analysis</li>
-                            <li>Secure local data processing</li>
-                            <li>Comprehensive tracking dashboard</li>
-                            <li>AI-powered trend insights</li>
-                            <li>Privacy-first architecture</li>
-                        </ul>
+                    <p>
+                        The app is being designed around local storage by default. Users can keep a dated visual history on their device, add observations, and choose whether to use an optional AI review for informational context.
+                    </p>
+                    <div class="notice">
+                        <strong>Important:</strong> This app is for personal tracking and informational support only. It is not intended to diagnose, treat, prevent, or monitor any disease, and it is not a substitute for a qualified healthcare professional.
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="about-section">
-        <div class="about-container">
-            <h2 class="section-title">About Orange Forge AI, LLC</h2>
-            <div class="about-content">
-                <p>
-                    Orange Forge AI, LLC is a dedicated software development studio based in Texas, committed to creating intelligent, user-centric applications that leverage the power of artificial intelligence. Our mission is to bridge the gap between cutting-edge technology and practical, accessible solutions that enhance users' lives.
-                </p>
-                <p>
-                    We specialize in developing sophisticated AI-powered tools with a focus on privacy, security, and user experience. Our team is passionate about innovation, attention to detail, and delivering products that set new standards in the industry.
-                </p>
+                <figure class="app-preview" aria-label="Mole tracking app preview placeholder">
+                    <div class="phone-frame">
+                        <div class="phone-speaker"></div>
+                        <div class="phone-screen">
+                            <div class="screen-topbar">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="mole-photo">
+                                <span></span>
+                            </div>
+                            <div class="record-lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="timeline">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>App screenshots will replace this preview when they are available.</figcaption>
+                </figure>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Orange Forge AI, LLC</h3>
-                    <p>Intelligent Software Solutions</p>
+        <section class="section principles-section" aria-labelledby="principles-title">
+            <div class="section-heading">
+                <p class="eyebrow">Product principles</p>
+                <h2 id="principles-title">Built around user control.</h2>
+            </div>
+
+            <div class="principle-grid">
+                <article class="principle">
+                    <h3>Local records first</h3>
+                    <p>Mole photos, dates, notes, and related details are intended to stay on the user's device unless the user chooses to send selected information elsewhere.</p>
+                </article>
+                <article class="principle">
+                    <h3>Optional AI review</h3>
+                    <p>If enabled, users choose the photos and text sent to an AI provider for a non-medical, informational response. Names, dates of birth, addresses, and similar identifiers are not intended to be sent.</p>
+                </article>
+                <article class="principle">
+                    <h3>Apple-native backup</h3>
+                    <p>Planned backup support will use Apple's iCloud architecture. <span class="brand-inline">Orange Forge AI<sup>TM</sup></span> does not plan to operate user account servers for app data.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section privacy-section" id="privacy" aria-labelledby="privacy-title">
+            <div class="section-layout compact">
+                <div class="section-copy">
+                    <p class="eyebrow">Privacy summary</p>
+                    <h2 id="privacy-title">Clear, concise, and aligned with the app design.</h2>
+                    <p>
+                        The privacy policy now reflects the intended on-device architecture, optional AI sharing, and iCloud backup path. It avoids claims about company servers, user accounts, or broad data collection that are not part of the current plan.
+                    </p>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#product">Product</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                    </ul>
+                <a class="button button-primary" href="privacy.html">Open privacy policy</a>
+            </div>
+        </section>
+
+        <section class="section company-section" id="company" aria-labelledby="company-title">
+            <div class="section-layout">
+                <div class="section-copy">
+                    <p class="eyebrow">Company</p>
+                    <h2 id="company-title">Orange Forge AI, LLC</h2>
+                    <p>
+                        <span class="brand-inline">Orange Forge AI<sup>TM</sup></span> is the public brand of Orange Forge AI, LLC, a small software company based in Texas, United States. The company builds focused applications that combine practical user workflows with careful AI-assisted features.
+                    </p>
+                    <p>
+                        This website is the public company site for Orange Forge AI, LLC and is designed to remain a static GitHub Pages-compatible site.
+                    </p>
                 </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p><a href="mailto:hello@orangeforgeai.com" class="footer-link">hello@orangeforgeai.com</a></p>
+
+                <div class="company-details" aria-label="Company details">
+                    <dl>
+                        <div>
+                            <dt>Legal name</dt>
+                            <dd>Orange Forge AI, LLC</dd>
+                        </div>
+                        <div>
+                            <dt>Public brand</dt>
+                            <dd>Orange Forge AI<sup>TM</sup></dd>
+                        </div>
+                        <div>
+                            <dt>Email</dt>
+                            <dd><a href="mailto:support@orangeforgeai.com">support@orangeforgeai.com</a></dd>
+                        </div>
+                        <div>
+                            <dt>Location</dt>
+                            <dd>Texas, United States</dd>
+                        </div>
+                    </dl>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Orange Forge AI, LLC. All rights reserved.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <a class="footer-brand" href="index.html#home">Orange Forge AI<sup>TM</sup></a>
+                <p>Website operated by Orange Forge AI, LLC.</p>
             </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="#product">App</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#company">Company</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </nav>
+            <p class="copyright">&copy; 2026 Orange Forge AI, LLC. All rights reserved.</p>
         </div>
     </footer>
 
