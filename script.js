@@ -1,6 +1,8 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-menu");
 const navLinks = document.querySelectorAll(".nav-menu a");
+const dropdownItems = document.querySelectorAll(".has-dropdown");
+const supportsHover = window.matchMedia("(hover: hover)").matches;
 
 function setMenu(open) {
     if (!menuToggle || !navMenu) {
@@ -10,7 +12,61 @@ function setMenu(open) {
     menuToggle.classList.toggle("is-open", open);
     navMenu.classList.toggle("is-open", open);
     menuToggle.setAttribute("aria-expanded", String(open));
+
+    if (!open) {
+        closeDropdowns();
+    }
 }
+
+function setDropdown(item, open) {
+    const toggle = item.querySelector(".dropdown-toggle");
+
+    item.classList.toggle("is-open", open);
+    if (toggle) {
+        toggle.setAttribute("aria-expanded", String(open));
+    }
+}
+
+function closeDropdowns(exceptItem = null) {
+    dropdownItems.forEach((item) => {
+        if (item === exceptItem) {
+            return;
+        }
+
+        setDropdown(item, false);
+    });
+}
+
+dropdownItems.forEach((item) => {
+    const toggle = item.querySelector(".dropdown-toggle");
+    let closeTimer = null;
+
+    if (!toggle) {
+        return;
+    }
+
+    function openDropdown() {
+        window.clearTimeout(closeTimer);
+        closeDropdowns(item);
+        setDropdown(item, true);
+    }
+
+    function scheduleClose() {
+        window.clearTimeout(closeTimer);
+        closeTimer = window.setTimeout(() => setDropdown(item, false), 220);
+    }
+
+    if (supportsHover) {
+        item.addEventListener("pointerenter", openDropdown);
+        item.addEventListener("pointerleave", scheduleClose);
+    }
+
+    toggle.addEventListener("click", () => {
+        const willOpen = !item.classList.contains("is-open");
+        closeDropdowns(item);
+        setDropdown(item, willOpen);
+    });
+});
 
 if (menuToggle && navMenu) {
     menuToggle.addEventListener("click", () => {
@@ -23,18 +79,20 @@ navLinks.forEach((link) => {
 });
 
 document.addEventListener("click", (event) => {
-    if (!menuToggle || !navMenu) {
-        return;
+    const target = event.target;
+
+    if (menuToggle && navMenu && !navMenu.contains(target) && !menuToggle.contains(target)) {
+        setMenu(false);
     }
 
-    const target = event.target;
-    if (!navMenu.contains(target) && !menuToggle.contains(target)) {
-        setMenu(false);
+    if (![...dropdownItems].some((item) => item.contains(target))) {
+        closeDropdowns();
     }
 });
 
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         setMenu(false);
+        closeDropdowns();
     }
 });

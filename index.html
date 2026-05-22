@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Orange Forge AI builds on-device software, including a privacy-minded mole tracking app in development for iPhone.">
+    <meta name="description" content="Orange Forge AI builds user-owned software, including OFAI MoleMap for mole record keeping.">
     <meta name="theme-color" content="#f37100">
-    <title>Orange Forge AI | 100% User-Owned Data</title>
+    <title>Orange Forge AI | User-Owned Software</title>
     <link rel="icon" type="image/png" href="assets/brand/logo.png">
     <link rel="apple-touch-icon" href="assets/brand/logo.png">
     <link rel="stylesheet" href="style.css">
@@ -28,11 +28,18 @@
             </button>
 
             <ul class="nav-menu" id="primary-menu">
-                <li><a href="#product">App</a></li>
-                <li><a href="#privacy">Privacy</a></li>
-                <li><a href="#company">Company</a></li>
-                <li><a href="privacy.html">Policy</a></li>
-                <li><a class="nav-contact" href="mailto:support@orangeforgeai.com">Contact</a></li>
+                <li class="nav-item has-dropdown">
+                    <button class="nav-link dropdown-toggle" type="button" aria-expanded="false" aria-controls="products-dropdown">
+                        Products
+                    </button>
+                    <div class="dropdown-panel" id="products-dropdown">
+                        <a class="dropdown-product" href="molemap.html">
+                            <span>OFAI MoleMap</span>
+                            <small>Mole records on your own device</small>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
             </ul>
         </nav>
     </header>
@@ -40,149 +47,107 @@
     <main id="main">
         <section class="hero" id="home" aria-labelledby="hero-title">
             <div class="hero-inner">
-                <p class="eyebrow">100% User-Owned Data</p>
+                <p class="eyebrow">User-owned software</p>
                 <h1 id="hero-title">Orange Forge AI<sup>TM</sup></h1>
                 <p class="hero-copy">
-                    On-device software for personal records, practical AI assistance, and user-controlled data.
+                    Focused software from Orange Forge AI, LLC, built around practical workflows and local control.
                 </p>
                 <div class="hero-actions" aria-label="Primary actions">
-                    <a class="button button-primary" href="#product">View the app</a>
-                    <a class="button button-secondary" href="privacy.html">Read privacy policy</a>
+                    <a class="button button-primary" href="#molemap">View the app</a>
                 </div>
             </div>
         </section>
 
-        <section class="section product-section" id="product" aria-labelledby="product-title">
-            <div class="section-layout">
+        <section class="section product-section" id="molemap" aria-labelledby="molemap-title">
+            <div class="product-grid">
                 <div class="section-copy">
-                    <p class="eyebrow">App in development</p>
-                    <h2 id="product-title">A mole tracking app for careful personal records.</h2>
+                    <p class="eyebrow">OFAI MoleMap</p>
+                    <h2 id="molemap-title">Track mole records on your own device.</h2>
                     <p>
-                        The first planned app from <span class="brand-inline">Orange Forge AI<sup>TM</sup></span> helps people photograph moles, record notes, and compare changes over time from their own iPhone.
-                    </p>
-                    <p>
-                        The app is being designed around local storage by default. Users can keep a dated visual history on their device, add observations, and choose whether to use an optional AI review for informational context.
+                        OFAI MoleMap lets you track your moles. You can record measurements and attach photos of your moles, all with an easy-to-use UI to put your moles exactly where they are on a 3D interactive body model. All data are stored on your own device.
                     </p>
                     <div class="notice">
-                        <strong>Important:</strong> This app is for personal tracking and informational support only. It is not intended to diagnose, treat, prevent, or monitor any disease, and it is not a substitute for a qualified healthcare professional.
+                        <strong>Disclaimer:</strong> OFAI MoleMap does not diagnose conditions, provide medical advice, or replace care from a qualified healthcare professional. It is purely for personal record keeping.
+                    </div>
+                    <div class="section-actions" aria-label="OFAI MoleMap actions">
+                        <a class="button button-primary" href="molemap.html">Learn more about OFAI MoleMap</a>
+                        <button class="button button-secondary" type="button" disabled>App Store</button>
                     </div>
                 </div>
 
-                <figure class="app-preview" aria-label="Mole tracking app preview placeholder">
-                    <div class="phone-frame">
-                        <div class="phone-speaker"></div>
-                        <div class="phone-screen">
-                            <div class="screen-topbar">
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="mole-photo">
-                                <span></span>
-                            </div>
-                            <div class="record-lines">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="timeline">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                <div class="device-gallery" aria-label="OFAI MoleMap screenshot placeholders">
+                    <figure class="device-card phone-card">
+                        <div class="device-frame phone-placeholder" role="img" aria-label="Placeholder image for OFAI MoleMap running on iPhone">
+                            <div class="phone-notch"></div>
+                            <div class="app-screen">
+                                <span class="screen-pill"></span>
+                                <div class="body-model"></div>
+                                <div class="screen-row"></div>
+                                <div class="screen-row short"></div>
+                                <div class="screen-metrics">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <figcaption>App screenshots will replace this preview when they are available.</figcaption>
-                </figure>
+                        <figcaption>iPhone app placeholder</figcaption>
+                    </figure>
+
+                    <figure class="device-card laptop-card">
+                        <div class="device-frame laptop-placeholder" role="img" aria-label="Placeholder image for OFAI MoleMap running on MacBook">
+                            <div class="laptop-screen">
+                                <div class="desktop-sidebar"></div>
+                                <div class="desktop-body">
+                                    <span class="screen-pill"></span>
+                                    <div class="desktop-model"></div>
+                                    <div class="desktop-panels">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="laptop-base"></div>
+                        </div>
+                        <figcaption>MacBook app placeholder</figcaption>
+                    </figure>
+                </div>
             </div>
         </section>
 
-        <section class="section principles-section" aria-labelledby="principles-title">
-            <div class="section-heading">
-                <p class="eyebrow">Product principles</p>
-                <h2 id="principles-title">Built around user control.</h2>
-            </div>
-
-            <div class="principle-grid">
-                <article class="principle">
-                    <h3>Local records first</h3>
-                    <p>Mole photos, dates, notes, and related details are intended to stay on the user's device unless the user chooses to send selected information elsewhere.</p>
-                </article>
-                <article class="principle">
-                    <h3>Optional AI review</h3>
-                    <p>If enabled, users choose the photos and text sent to an AI provider for a non-medical, informational response. Names, dates of birth, addresses, and similar identifiers are not intended to be sent.</p>
-                </article>
-                <article class="principle">
-                    <h3>Apple-native backup</h3>
-                    <p>Planned backup support will use Apple's iCloud architecture. <span class="brand-inline">Orange Forge AI<sup>TM</sup></span> does not plan to operate user account servers for app data.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="section privacy-section" id="privacy" aria-labelledby="privacy-title">
-            <div class="section-layout compact">
-                <div class="section-copy">
-                    <p class="eyebrow">Privacy summary</p>
-                    <h2 id="privacy-title">Clear, concise, and aligned with the app design.</h2>
+        <section class="directory-section" id="about" aria-labelledby="about-title">
+            <div class="directory-grid">
+                <div class="directory-company">
+                    <img class="directory-logo" src="assets/brand/logo.png" alt="" width="84" height="84">
+                    <h2 id="about-title">Orange Forge AI, LLC</h2>
                     <p>
-                        The privacy policy now reflects the intended on-device architecture, optional AI sharing, and iCloud backup path. It avoids claims about company servers, user accounts, or broad data collection that are not part of the current plan.
+                        Orange Forge AI, LLC is a Texas-based software company behind <span class="brand-inline">Orange Forge AI<sup>TM</sup></span> and OFAI MoleMap.
                     </p>
-                </div>
-                <a class="button button-primary" href="privacy.html">Open privacy policy</a>
-            </div>
-        </section>
-
-        <section class="section company-section" id="company" aria-labelledby="company-title">
-            <div class="section-layout">
-                <div class="section-copy">
-                    <p class="eyebrow">Company</p>
-                    <h2 id="company-title">Orange Forge AI, LLC</h2>
-                    <p>
-                        <span class="brand-inline">Orange Forge AI<sup>TM</sup></span> is the public brand of Orange Forge AI, LLC, a small software company based in Texas, United States. The company builds focused applications that combine practical user workflows with careful AI-assisted features.
-                    </p>
-                    <p>
-                        This website is the public company site for Orange Forge AI, LLC and is designed to remain a static GitHub Pages-compatible site.
-                    </p>
+                    <p><a href="mailto:support@orangeforgeai.com">support@orangeforgeai.com</a></p>
+                    <p>Texas, United States</p>
                 </div>
 
-                <div class="company-details" aria-label="Company details">
-                    <dl>
-                        <div>
-                            <dt>Legal name</dt>
-                            <dd>Orange Forge AI, LLC</dd>
-                        </div>
-                        <div>
-                            <dt>Public brand</dt>
-                            <dd>Orange Forge AI<sup>TM</sup></dd>
-                        </div>
-                        <div>
-                            <dt>Email</dt>
-                            <dd><a href="mailto:support@orangeforgeai.com">support@orangeforgeai.com</a></dd>
-                        </div>
-                        <div>
-                            <dt>Location</dt>
-                            <dd>Texas, United States</dd>
-                        </div>
-                    </dl>
-                </div>
+                <nav class="directory-column" aria-label="Products">
+                    <h3>Products</h3>
+                    <a href="molemap.html">OFAI MoleMap</a>
+                </nav>
+
+                <nav class="directory-column" aria-label="Company">
+                    <h3>About</h3>
+                    <a href="#home">Company</a>
+                    <a href="mailto:support@orangeforgeai.com">Contact</a>
+                </nav>
+
+                <nav class="directory-column" aria-label="Legal">
+                    <h3>Legal</h3>
+                    <a href="privacy.html">Website Privacy Policy</a>
+                    <a href="molemap.html#app-privacy">OFAI MoleMap Privacy</a>
+                </nav>
+
+                <p class="directory-copyright">&copy; 2026 Orange Forge AI, LLC. All rights reserved.</p>
             </div>
         </section>
     </main>
-
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <div>
-                <a class="footer-brand" href="index.html#home">Orange Forge AI<sup>TM</sup></a>
-                <p>Website operated by Orange Forge AI, LLC.</p>
-            </div>
-            <nav class="footer-nav" aria-label="Footer navigation">
-                <a href="#product">App</a>
-                <a href="#privacy">Privacy</a>
-                <a href="#company">Company</a>
-                <a href="privacy.html">Privacy Policy</a>
-            </nav>
-            <p class="copyright">&copy; 2026 Orange Forge AI, LLC. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
