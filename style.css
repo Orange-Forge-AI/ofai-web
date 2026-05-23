@@ -630,7 +630,7 @@ sup {
 }
 
 .compact-directory .directory-grid {
-    grid-template-columns: minmax(260px, 1.6fr) repeat(2, minmax(130px, 0.7fr));
+    grid-template-columns: minmax(260px, 1.6fr) repeat(3, minmax(130px, 0.7fr));
 }
 
 .directory-company {
@@ -668,6 +668,7 @@ sup {
 .directory-company a,
 .directory-column a {
     font-weight: 700;
+    overflow-wrap: anywhere;
     text-decoration: none;
 }
 
@@ -753,6 +754,7 @@ sup {
     margin-bottom: 0;
 }
 
+.policy-header a,
 .policy-section a,
 .app-policy-container a {
     color: var(--teal);
@@ -760,6 +762,7 @@ sup {
     text-decoration: none;
 }
 
+.policy-header a:hover,
 .policy-section a:hover,
 .app-policy-container a:hover {
     text-decoration: underline;
@@ -773,10 +776,6 @@ sup {
 
 .feature-device {
     width: 100%;
-}
-
-.app-privacy-section {
-    background: #fbfbfa;
 }
 
 .app-policy-container {
