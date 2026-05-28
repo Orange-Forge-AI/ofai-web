@@ -2,6 +2,8 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-menu");
 const navLinks = document.querySelectorAll(".nav-menu a");
 const dropdownItems = document.querySelectorAll(".has-dropdown");
+const supportSelect = document.querySelector("[data-support-select]");
+const supportPanels = document.querySelectorAll("[data-support-panel]");
 const supportsHover = window.matchMedia("(hover: hover)").matches;
 
 function setMenu(open) {
@@ -77,6 +79,20 @@ if (menuToggle && navMenu) {
 navLinks.forEach((link) => {
     link.addEventListener("click", () => setMenu(false));
 });
+
+function showSupportPanel(product) {
+    supportPanels.forEach((panel) => {
+        panel.hidden = panel.dataset.supportPanel !== product;
+    });
+}
+
+if (supportSelect && supportPanels.length > 0) {
+    showSupportPanel(supportSelect.value);
+
+    supportSelect.addEventListener("change", () => {
+        showSupportPanel(supportSelect.value);
+    });
+}
 
 document.addEventListener("click", (event) => {
     const target = event.target;
