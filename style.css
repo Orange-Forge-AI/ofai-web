@@ -275,7 +275,8 @@ sup {
 .hero-inner,
 .product-grid,
 .directory-grid,
-.app-hero-grid {
+.app-hero-grid,
+.app-page-inner {
     width: min(1160px, calc(100% - 2rem));
     margin: 0 auto;
 }
@@ -778,8 +779,369 @@ sup {
     width: 100%;
 }
 
+.product-hero {
+    overflow: hidden;
+}
+
+.product-hero-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+}
+
+.app-hero-copy p {
+    max-width: 650px;
+}
+
+.app-icon-lockup {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+}
+
+.app-icon-lockup .eyebrow {
+    margin: 0;
+}
+
+.app-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    box-shadow: 0 14px 30px rgba(23, 19, 15, 0.16);
+}
+
+.hero-subhead {
+    color: #302b27;
+    font-size: 1.28rem;
+    font-weight: 650;
+    line-height: 1.45;
+}
+
+.product-hero-media {
+    position: relative;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-screen-main,
+.hero-screen-phone,
+.backup-visual img {
+    filter: drop-shadow(0 20px 35px rgba(23, 19, 15, 0.14));
+}
+
+.hero-screen-main {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.hero-screen-phone {
+    position: absolute;
+    right: 0;
+    bottom: 1.2rem;
+    width: min(31%, 174px);
+    border-radius: 8px;
+}
+
+.app-section,
+.screenshot-band,
+.feature-grid-section,
+.faq-section,
+.final-cta,
+.support-section {
+    padding: clamp(4rem, 8vw, 6rem) 0;
+}
+
+.split-section,
+.final-cta-inner,
+.support-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+}
+
+.feature-list {
+    display: grid;
+    gap: 0.85rem;
+    margin: 0;
+    padding: 0;
+    color: var(--ink);
+    list-style: none;
+}
+
+.feature-list li {
+    position: relative;
+    border-bottom: 1px solid var(--line);
+    padding: 0 0 0.85rem 1.45rem;
+    font-weight: 700;
+}
+
+.feature-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--brand);
+}
+
+.centered-copy {
+    max-width: 760px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.centered-copy p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.screenshot-band,
+.feature-grid-section,
+.faq-section,
+.support-main {
+    background: #fbfbfa;
+}
+
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.7fr) minmax(230px, 0.82fr) minmax(300px, 1.25fr);
+    gap: 1.25rem;
+    align-items: end;
+}
+
+.screenshot-card,
+.feature-card {
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+    box-shadow: 0 16px 34px rgba(23, 19, 15, 0.07);
+}
+
+.screenshot-card {
+    padding: 1rem;
+}
+
+.screenshot-card img {
+    width: 100%;
+    height: 360px;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+.screenshot-card-desktop img {
+    height: 300px;
+}
+
+.screenshot-card figcaption {
+    margin-top: 0.9rem;
+    color: var(--muted);
+    font-size: 0.94rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.feature-card {
+    padding: 1.25rem;
+}
+
+.feature-card h3,
+.faq-item h3,
+.support-content h3,
+.support-faq h4,
+.policy-section h3 {
+    margin: 0 0 0.65rem;
+    line-height: 1.2;
+}
+
+.feature-card h3,
+.faq-item h3,
+.support-content h3,
+.policy-section h3 {
+    color: var(--brand-dark);
+    font-size: 1.18rem;
+}
+
+.feature-card p,
+.faq-item p,
+.support-content p,
+.support-selector p,
+.support-content li {
+    color: var(--muted);
+}
+
+.feature-card p,
+.faq-item p,
+.support-content p,
+.support-selector p {
+    margin: 0;
+}
+
+.backup-section {
+    background: linear-gradient(135deg, #ffffff 0%, var(--mint) 100%);
+}
+
+.backup-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.backup-visual img {
+    width: min(470px, 100%);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 2rem;
+}
+
+.faq-item {
+    border-top: 1px solid var(--line);
+    padding: 1.35rem 0;
+}
+
+.final-cta {
+    background: var(--warm);
+    border-top: 1px solid var(--line);
+}
+
+.final-cta-inner {
+    align-items: center;
+}
+
+.final-actions {
+    justify-content: flex-end;
+    margin-top: 0;
+}
+
+.support-hero {
+    background: linear-gradient(135deg, var(--warm) 0%, #ffffff 68%);
+    border-bottom: 1px solid var(--line);
+    padding: clamp(4rem, 8vw, 5.5rem) 0;
+}
+
+.support-hero h1,
+.support-content h2 {
+    margin: 0;
+    line-height: 1.02;
+    letter-spacing: 0;
+}
+
+.support-hero h1 {
+    font-size: 3.4rem;
+}
+
+.support-hero p {
+    max-width: 720px;
+    color: var(--muted);
+    font-size: 1.12rem;
+}
+
+.support-selector,
+.support-content {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+}
+
+.support-selector {
+    position: sticky;
+    top: 98px;
+    padding: 1.25rem;
+}
+
+.support-selector label {
+    display: block;
+    margin-bottom: 0.55rem;
+    color: var(--ink);
+    font-weight: 800;
+}
+
+.support-select {
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 0.7rem 0.85rem;
+    font: inherit;
+    font-weight: 700;
+}
+
+.support-selector p {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.support-content {
+    padding: clamp(1.4rem, 4vw, 2.25rem);
+}
+
+.support-content h2 {
+    font-size: 2.4rem;
+}
+
+.support-content p + p {
+    margin-top: 0.85rem;
+}
+
+.support-block {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+}
+
+.support-block .notice {
+    margin-top: 1rem;
+}
+
+.support-content a {
+    color: var(--teal);
+    font-weight: 750;
+    text-decoration: none;
+}
+
+.support-content a:hover,
+.support-content a:focus {
+    text-decoration: underline;
+}
+
+.support-faq h4 {
+    margin-top: 1.5rem;
+    color: var(--ink);
+    font-size: 1.02rem;
+}
+
+.policy-list {
+    margin: 0.8rem 0 0;
+    padding-left: 1.25rem;
+}
+
+.policy-list li {
+    margin-bottom: 0.55rem;
+}
+
+.policy-section h3 {
+    margin-top: 1.6rem;
+}
+
 .app-policy-container {
     box-shadow: none;
+}
+
+[hidden] {
+    display: none !important;
 }
 
 :focus-visible {
@@ -860,9 +1222,41 @@ sup {
 
     .product-grid,
     .app-hero-grid,
+    .product-hero-grid,
+    .split-section,
+    .final-cta-inner,
+    .support-layout,
     .directory-grid,
     .compact-directory .directory-grid {
         grid-template-columns: 1fr;
+    }
+
+    .product-hero-media {
+        min-height: auto;
+    }
+
+    .hero-screen-phone {
+        right: 0.5rem;
+        bottom: 0.5rem;
+    }
+
+    .screenshot-grid,
+    .feature-grid,
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .screenshot-card img,
+    .screenshot-card-desktop img {
+        height: 340px;
+    }
+
+    .support-selector {
+        position: static;
+    }
+
+    .final-actions {
+        justify-content: flex-start;
     }
 
     .directory-company {
@@ -876,6 +1270,7 @@ sup {
     .product-grid,
     .directory-grid,
     .app-hero-grid,
+    .app-page-inner,
     .policy-container {
         width: min(100% - 1.25rem, 1160px);
     }
@@ -910,6 +1305,43 @@ sup {
 
     .phone-placeholder {
         width: min(230px, 78vw);
+    }
+
+    .app-icon-lockup {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .hero-subhead {
+        font-size: 1.12rem;
+    }
+
+    .product-hero-media {
+        display: block;
+    }
+
+    .hero-screen-main {
+        width: 100%;
+    }
+
+    .hero-screen-phone {
+        display: block;
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: min(210px, 56vw);
+        margin: -1.5rem 0 0 auto;
+    }
+
+    .screenshot-card img,
+    .screenshot-card-desktop img {
+        height: 310px;
+    }
+
+    .support-hero h1,
+    .support-content h2 {
+        font-size: 2.25rem;
     }
 }
 
