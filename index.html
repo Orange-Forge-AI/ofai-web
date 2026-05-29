@@ -7,15 +7,15 @@
     <meta name="theme-color" content="#f37100">
     <title>Orange Forge AI — User-owned software, beautifully made</title>
 
-    <link rel="icon" type="image/png" sizes="256x256" href="assets/brand/logo-256.png">
-    <link rel="apple-touch-icon" href="assets/brand/logo-180.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/brand/logo.png">
+    <link rel="apple-touch-icon" href="assets/brand/logo.png">
 
     <!-- Open Graph / social -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://orangeforgeai.com/">
     <meta property="og:title" content="Orange Forge AI — User-owned software, beautifully made">
     <meta property="og:description" content="A software studio building focused, private apps that keep your data on your device. Meet MoleJournal, a calm home for your skin records.">
-    <meta property="og:image" content="https://orangeforgeai.com/assets/brand/logo-256.png">
+    <meta property="og:image" content="https://orangeforgeai.com/assets/brand/logo.png">
     <meta name="twitter:card" content="summary">
 
     <!-- Preload the self-hosted variable fonts to avoid a flash of fallback text -->
@@ -32,7 +32,7 @@
     <header class="site-header">
         <nav class="navbar" aria-label="Primary navigation">
             <a class="brand-link" href="index.html#home" aria-label="Orange Forge AI home">
-                <img class="brand-mark" src="assets/brand/logo-96.webp" alt="" width="38" height="38">
+                <img class="brand-mark" src="assets/brand/logo.png" alt="" width="38" height="38">
                 <span class="brand-text">Orange Forge AI<sup>TM</sup></span>
             </a>
 
@@ -55,268 +55,60 @@
                         </a>
                     </div>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#philosophy">Studio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#philosophy">Company</a></li>
                 <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
-                <li class="nav-item nav-cta"><a class="button button-primary button--sm" href="molejournal.html">Explore MoleJournal</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="main">
         <!-- ============ HERO ============ -->
-        <section class="hero" id="home" aria-labelledby="hero-title">
-            <div class="container hero__inner">
+        <section class="hero hero--company" id="home" aria-labelledby="hero-title">
+            <div class="container hero__inner hero__inner--simple">
                 <div class="hero__copy">
-                    <p class="eyebrow">Independent software studio · Texas</p>
+                    <p class="eyebrow">Independent software company · Texas</p>
                     <h1 class="hero__title" id="hero-title">Software, forged to be&nbsp;<span class="accent">truly yours</span>.</h1>
                     <p class="hero__lead">
-                        Orange Forge AI builds focused, private apps that keep your data on your own device — starting with <strong>MoleJournal</strong>, a calm home for your skin records.
+                        <span class="brand-name">Orange Forge AI<sup>TM</sup></span> builds focused, private apps that keep your data on your own device.
                     </p>
-                    <div class="button-row">
-                        <a class="button button-primary" href="molejournal.html">Explore MoleJournal <span class="arrow" aria-hidden="true">→</span></a>
-                        <a class="button button-secondary" href="#philosophy">Why user-owned?</a>
-                    </div>
-                    <p class="hero__note"><span class="dot" aria-hidden="true"></span> No accounts · No cloud · Your records never leave your device</p>
-                </div>
-
-                <div class="hero__media">
-                    <picture>
-                        <source type="image/webp"
-                            srcset="assets/screenshots/mac_profile_detail_view_framed-1600.webp 1600w, assets/screenshots/mac_profile_detail_view_framed-1000.webp 1000w, assets/screenshots/mac_profile_detail_view_framed-600.webp 600w"
-                            sizes="(max-width: 1000px) 80vw, 560px">
-                        <img class="hero__device-main" src="assets/screenshots/mac_profile_detail_view_framed.png"
-                            width="1600" height="1067" alt="MoleJournal showing an interactive 3D body model on a Mac" fetchpriority="high" decoding="async">
-                    </picture>
-                    <picture>
-                        <source type="image/webp"
-                            srcset="assets/screenshots/iphone_profile_view_framed-600.webp 600w, assets/screenshots/iphone_profile_view_framed-360.webp 360w"
-                            sizes="(max-width: 1000px) 28vw, 160px">
-                        <img class="hero__device-phone" src="assets/screenshots/iphone_profile_view_framed.png"
-                            width="900" height="1837" alt="The MoleJournal profiles screen on iPhone reading &quot;Your private skin journal&quot;" decoding="async">
-                    </picture>
-                </div>
-            </div>
-
-            <div class="container">
-                <dl class="stats" data-reveal aria-label="At a glance">
-                    <div class="stat">
-                        <dt class="stat__label">Where records live</dt>
-                        <dd class="stat__num">100<span class="unit">%</span> on&#8209;device</dd>
-                    </div>
-                    <div class="stat">
-                        <dt class="stat__label">Accounts &amp; trackers</dt>
-                        <dd class="stat__num">0</dd>
-                    </div>
-                    <div class="stat">
-                        <dt class="stat__label">Native Apple platforms</dt>
-                        <dd class="stat__num">3</dd>
-                    </div>
-                    <div class="stat">
-                        <dt class="stat__label">Backups you control</dt>
-                        <dd class="stat__num">Always</dd>
-                    </div>
-                </dl>
-            </div>
-        </section>
-
-        <!-- ============ FLAGSHIP BENTO ============ -->
-        <section class="section" id="molejournal" aria-labelledby="flagship-title">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <p class="eyebrow">The flagship</p>
-                    <h2 id="flagship-title">MoleJournal — a private journal for your skin.</h2>
-                    <p>Record moles on a 3D body model, attach dated photos and measurements, and keep a clear timeline for every spot. Everything stays on your device.</p>
-                </div>
-
-                <div class="bento">
-                    <!-- wide feature tile: body map screenshot beside copy -->
-                    <article class="bento__item bento__item--media bento__item--feature span-4 row-2" data-reveal>
-                        <div class="bento__media">
-                            <picture>
-                                <source type="image/webp"
-                                    srcset="assets/screenshots/iphone_profile_detail_view_framed-600.webp 600w, assets/screenshots/iphone_profile_detail_view_framed-360.webp 360w"
-                                    sizes="(max-width: 1000px) 60vw, 230px">
-                                <img src="assets/screenshots/iphone_profile_detail_view_framed.png" width="900" height="1837"
-                                    alt="MoleJournal's 3D body map on iPhone with mole markers" loading="lazy" decoding="async">
-                            </picture>
-                        </div>
-                        <div class="bento__body">
-                            <span class="bento__icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.4"/><path d="M5 9.5 12 8l7 1.5"/><path d="M12 8v7"/><path d="M9 21l3-6 3 6"/></svg>
-                            </span>
-                            <h3 class="bento__title">Put every mole exactly where it is</h3>
-                            <p class="bento__text">Place markers on an interactive 3D body model instead of guessing from flat diagrams or memory. Active and biopsied moles are colour-coded at a glance, on a map that's yours alone.</p>
-                        </div>
-                    </article>
-
-                    <article class="bento__item bento__item--accent" data-reveal style="--reveal-delay:80ms">
-                        <span class="bento__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-                        </span>
-                        <h3 class="bento__title">Private by design</h3>
-                        <p class="bento__text">Records and photos are stored locally. No account, no cloud sync, nothing sent to a server.</p>
-                    </article>
-
-                    <article class="bento__item" data-reveal style="--reveal-delay:160ms">
-                        <span class="bento__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6l4 2"/><circle cx="12" cy="13" r="8"/></svg>
-                        </span>
-                        <h3 class="bento__title">A timeline for every mole</h3>
-                        <p class="bento__text">Keep dated photos, measurements, and notes together so each spot's history is easy to review.</p>
-                    </article>
-
-                    <article class="bento__item" data-reveal>
-                        <span class="bento__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 11a3 3 0 1 0-1-5.8"/><path d="M15.5 20a5.5 5.5 0 0 0-2-4.3"/></svg>
-                        </span>
-                        <h3 class="bento__title">Profiles for the family</h3>
-                        <p class="bento__text">Keep separate profiles for yourself or family recordkeeping, each with its own body map.</p>
-                    </article>
-
-                    <article class="bento__item" data-reveal style="--reveal-delay:80ms">
-                        <span class="bento__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
-                        </span>
-                        <h3 class="bento__title">Backups you control</h3>
-                        <p class="bento__text">Export a backup file whenever you want an extra copy — you choose where it's saved.</p>
-                    </article>
-
-                    <article class="bento__item" data-reveal style="--reveal-delay:160ms">
-                        <span class="bento__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.4"/><path d="M11 18h2"/></svg>
-                        </span>
-                        <h3 class="bento__title">No account, no cloud</h3>
-                        <p class="bento__text">Use MoleJournal straight away — there's nothing to sign up for and nothing synced you didn't ask for.</p>
-                    </article>
-                </div>
-
-                <div class="button-row" data-reveal>
-                    <a class="button button-secondary" href="molejournal.html">See everything MoleJournal does <span class="arrow" aria-hidden="true">→</span></a>
+                    <p class="hero__note"><span class="dot" aria-hidden="true"></span> User-owned tools · No accounts by default · Practical native software</p>
                 </div>
             </div>
         </section>
 
-        <!-- ============ INTERACTIVE BODY-MAP DEMO ============ -->
-        <section class="section section--alt" id="bodymap" aria-labelledby="bodymap-title">
-            <div class="container bodymap__inner">
-                <div data-reveal>
-                    <p class="eyebrow">Try it</p>
-                    <h2 id="bodymap-title" class="section-head">Place a mole, exactly where it is.</h2>
-                    <p class="lead" style="margin-top:1.1rem">This is how MoleJournal thinks about location — not a list, but a body you can point to.</p>
-                    <p style="margin-top:1rem;color:var(--muted)">Hover or tap a marker to see its record. <strong style="color:var(--ink)">Click anywhere on the body</strong> to drop a new one. You've mapped <strong style="color:var(--brand-ink)" data-bodymap-count>3</strong> so far.</p>
-                    <div class="bodymap__legend" aria-hidden="true">
-                        <span><i></i> Active</span>
-                        <span><i class="biopsied"></i> Biopsied</span>
-                    </div>
-                </div>
-
-                <div class="bodymap__stage" data-bodymap data-reveal aria-label="Interactive body map demo. Markers below are focusable for details.">
-                    <svg class="bodymap__figure" viewBox="0 0 220 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-                        <circle cx="110" cy="40" r="26"/>
-                        <rect x="101" y="60" width="18" height="18" rx="6"/>
-                        <path d="M76,84 Q72,78 82,76 L138,76 Q148,78 144,84 L137,196 Q137,206 127,206 L93,206 Q83,206 83,196 Z"/>
-                        <rect x="52" y="86" width="18" height="120" rx="9"/>
-                        <rect x="150" y="86" width="18" height="120" rx="9"/>
-                        <rect x="86" y="198" width="20" height="150" rx="10"/>
-                        <rect x="114" y="198" width="20" height="150" rx="10"/>
-                    </svg>
-
-                    <button class="bodymap__marker" type="button" style="left:50%;top:25%"
-                        data-title="Left neck" data-meta="2 × 3 mm · 4 entries" aria-label="Mole: Left neck, 2 by 3 millimetres, 4 entries"></button>
-                    <button class="bodymap__marker" type="button" style="left:36%;top:48%"
-                        data-title="Right forearm" data-meta="1 × 1 mm · 2 entries" aria-label="Mole: Right forearm, 1 by 1 millimetre, 2 entries"></button>
-                    <button class="bodymap__marker is-biopsied" type="button" style="left:56%;top:46%"
-                        data-title="Abdomen" data-meta="Biopsied · 3 entries" aria-label="Mole: Abdomen, biopsied, 3 entries"></button>
-
-                    <div class="bodymap__tooltip" data-bodymap-tooltip role="status" aria-live="polite">
-                        <h4 data-tt-title>Left neck</h4>
-                        <p class="meta" data-tt-meta>2 × 3 mm · 4 entries</p>
-                    </div>
-
-                    <div class="bodymap__hint" data-bodymap-hint aria-hidden="true">Click the body to drop a mole</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ CROSS-DEVICE SHOWCASE ============ -->
-        <section class="section" aria-labelledby="devices-title">
-            <div class="container showcase">
-                <div class="section-head section-head--center" data-reveal>
-                    <p class="eyebrow eyebrow--center">One journal, every screen</p>
-                    <h2 id="devices-title">Native on iPhone, iPad, and Mac.</h2>
-                    <p>The same private journal, designed to feel at home on each device — your records sync only through backups you make yourself.</p>
-                </div>
-
-                <div class="showcase__devices" data-reveal>
-                    <picture>
-                        <source type="image/webp"
-                            srcset="assets/screenshots/mac_mole_timeline_view_framed-1600.webp 1600w, assets/screenshots/mac_mole_timeline_view_framed-1000.webp 1000w"
-                            sizes="(max-width: 860px) 90vw, 700px">
-                        <img class="showcase__mac" src="assets/screenshots/mac_mole_timeline_view_framed.png" width="1600" height="1067"
-                            alt="MoleJournal mole timeline on a Mac" loading="lazy" decoding="async">
-                    </picture>
-                    <picture>
-                        <source type="image/webp"
-                            srcset="assets/screenshots/ipad_mole_timeline_view_framed-800.webp 800w, assets/screenshots/ipad_mole_timeline_view_framed-480.webp 480w"
-                            sizes="(max-width: 860px) 40vw, 240px">
-                        <img class="showcase__ipad" src="assets/screenshots/ipad_mole_timeline_view_framed.png" width="1280" height="1670"
-                            alt="MoleJournal mole timeline on an iPad" loading="lazy" decoding="async">
-                    </picture>
-                    <picture>
-                        <source type="image/webp"
-                            srcset="assets/screenshots/iphone_mole_edit_view_framed-600.webp 600w, assets/screenshots/iphone_mole_edit_view_framed-360.webp 360w"
-                            sizes="(max-width: 860px) 28vw, 160px">
-                        <img class="showcase__phone" src="assets/screenshots/iphone_mole_edit_view_framed.png" width="900" height="1837"
-                            alt="Editing a mole record on iPhone" loading="lazy" decoding="async">
-                    </picture>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ ABOUT / PHILOSOPHY ============ -->
-        <section class="section section--alt" id="philosophy" aria-labelledby="philosophy-title">
-            <div class="container split">
-                <div class="split__media" data-reveal>
-                    <picture>
-                        <source type="image/webp"
-                            srcset="assets/screenshots/mac_profile_view_framed-1600.webp 1600w, assets/screenshots/mac_profile_view_framed-1000.webp 1000w, assets/screenshots/mac_profile_view_framed-600.webp 600w"
-                            sizes="(max-width: 860px) 90vw, 540px">
-                        <img src="assets/screenshots/mac_profile_view_framed.png" width="1600" height="1067"
-                            alt="MoleJournal's calm welcome screen: &quot;A mindful space to track your moles, at your own pace.&quot;" loading="lazy" decoding="async">
-                    </picture>
-                </div>
-                <div data-reveal>
-                    <p class="eyebrow">The studio</p>
-                    <h2 id="philosophy-title">We forge software you actually own.</h2>
-                    <p style="margin-top:1.1rem">
-                        <span class="brand-name">Orange Forge AI</span> is a small, independent studio in Texas. We build a few focused apps and finish them with care — the way good tools used to be made.
+        <!-- ============ MOLEJOURNAL TEASER ============ -->
+        <section class="section section--alt" id="molejournal" aria-labelledby="molejournal-title">
+            <div class="container product-intro" data-reveal>
+                <div class="section-head">
+                    <p class="eyebrow">MoleJournal</p>
+                    <h2 id="molejournal-title">A private journal for your skin records.</h2>
+                    <p>
+                        Keep mole photos, measurements, notes, and body locations organized on your own device. MoleJournal is calm, local-first, and built for personal recordkeeping.
                     </p>
-                    <p style="margin-top:1rem;color:var(--muted)">
-                        Our principle is simple: your data is yours. Our apps work without accounts, keep your information on your device, and let you take a backup whenever you like. No tracking, no ads, no cloud you didn't ask for.
-                    </p>
-                    <ul class="checklist">
-                        <li>On-device first — your records stay with you</li>
-                        <li>No accounts, no trackers, no ads</li>
-                        <li>Built natively for Apple platforms</li>
-                        <li>Crafted in detail, not churned out</li>
-                    </ul>
+                </div>
+                <div class="product-intro__actions">
+                    <a class="button button-primary" href="molejournal.html">Explore MoleJournal <span class="arrow" aria-hidden="true">→</span></a>
                 </div>
             </div>
         </section>
 
-        <!-- ============ FINAL CTA ============ -->
-        <section class="section" aria-labelledby="cta-title">
-            <div class="container">
-                <div class="cta" data-reveal>
-                    <div class="cta__spark" aria-hidden="true"></div>
-                    <p class="eyebrow eyebrow--center" style="color:var(--ember)">Get started</p>
-                    <h2 id="cta-title">Start your private skin journal.</h2>
-                    <p>Keep mole photos, measurements, notes, and body locations organised in one calm, on-device app. No account required.</p>
-                    <div class="button-row">
-                        <a class="button button-primary" href="molejournal.html">Explore MoleJournal <span class="arrow" aria-hidden="true">→</span></a>
-                        <a class="button button-secondary button--on-dark" href="support.html">Get support</a>
-                    </div>
-                </div>
+        <!-- ============ COMPANY ============ -->
+        <section class="section" id="philosophy" aria-labelledby="philosophy-title">
+            <div class="container company-summary" data-reveal>
+                <p class="eyebrow">Company</p>
+                <h2 id="philosophy-title">We forge software you actually own.</h2>
+                <p style="margin-top:1.1rem">
+                    <span class="brand-name">Orange Forge AI<sup>TM</sup></span> is a small, independent company in Texas. We build focused apps and finish them with care.
+                </p>
+                <p style="margin-top:1rem;color:var(--muted)">
+                    Our principle is simple: your data is yours. Our apps work without accounts, keep information on your device when possible, and let you take a backup whenever you like.
+                </p>
+                <ul class="checklist">
+                    <li>On-device first — your records stay with you</li>
+                    <li>No trackers, no ads, no cloud you did not ask for</li>
+                    <li>Built natively for Apple platforms</li>
+                    <li>Crafted in detail, not churned out</li>
+                </ul>
             </div>
         </section>
     </main>
@@ -328,7 +120,7 @@
             <div class="footer__grid">
                 <div class="footer__brand">
                     <a class="footer__logo" href="index.html#home" aria-label="Orange Forge AI home">
-                        <img src="assets/brand/logo-96.webp" alt="" width="40" height="40">
+                        <img src="assets/brand/logo.png" alt="" width="40" height="40">
                         <span>Orange Forge AI<sup>TM</sup></span>
                     </a>
                     <p>An independent software studio building focused, user-owned apps. Made in Texas.</p>
@@ -342,13 +134,12 @@
                 <nav class="footer__col" aria-label="Products">
                     <h3>Product</h3>
                     <a href="molejournal.html">MoleJournal</a>
-                    <a href="index.html#bodymap">Body map</a>
-                    <a href="support.html">Support</a>
                 </nav>
 
-                <nav class="footer__col" aria-label="Studio">
-                    <h3>Studio</h3>
+                <nav class="footer__col" aria-label="Company">
+                    <h3>Company</h3>
                     <a href="index.html#philosophy">About</a>
+                    <a href="support.html">Support</a>
                     <a href="mailto:support@orangeforgeai.com">Contact</a>
                 </nav>
 

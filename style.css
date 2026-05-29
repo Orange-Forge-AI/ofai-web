@@ -11,7 +11,7 @@
      2. Tokens           7. Hero                12. Showcase strip
      3. Base/reset       8. Stats               13. App page (MoleJournal)
      4. Utilities        9. Bento + cards       14. FAQ / policy / support
-     5. Buttons         10. Interactive bodymap 15. Footer + responsive
+     5. Buttons         10. Split + checklist   15. Footer + responsive
    ===================================================================== */
 
 /* 1. Fonts — self-hosted latin subset (no third-party requests) ------- */
@@ -131,6 +131,10 @@ picture,
 svg {
     display: block;
     max-width: 100%;
+}
+
+img {
+    height: auto;
 }
 
 a {
@@ -461,10 +465,6 @@ sup {
     position: relative;
 }
 
-.nav-cta {
-    margin-left: 0.6rem;
-}
-
 .nav-link {
     display: inline-flex;
     align-items: center;
@@ -619,6 +619,15 @@ sup {
     gap: clamp(2rem, 5vw, 4.5rem);
 }
 
+.hero__inner--simple {
+    display: block;
+    max-width: 840px;
+}
+
+.hero__inner--simple .hero__lead {
+    max-width: 52ch;
+}
+
 .hero__title {
     font-size: clamp(2.6rem, 6.2vw, 4.9rem);
     line-height: 1.02;
@@ -695,6 +704,34 @@ sup {
 .hero__copy > *:nth-child(5) { animation-delay: 0.41s; }
 .hero__media {
     animation: rise 1s var(--ease-out) 0.2s both;
+}
+
+.product-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(1.5rem, 5vw, 4rem);
+}
+
+.product-intro .section-head {
+    max-width: 780px;
+}
+
+.product-intro__actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.product-intro__actions .button {
+    white-space: nowrap;
+}
+
+.company-summary {
+    max-width: 840px;
+}
+
+.company-summary .checklist {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 @keyframes rise {
@@ -801,7 +838,9 @@ sup {
 }
 
 .bento__media--contain img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
+    height: auto;
     object-fit: contain;
 }
 
@@ -897,160 +936,7 @@ sup {
     box-shadow: var(--shadow-md);
 }
 
-/* 10. Interactive body-map demo (honest product showcase, no AI) ------ */
-.bodymap__inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-    align-items: center;
-    gap: clamp(2rem, 5vw, 4.5rem);
-}
-
-.bodymap__stage {
-    position: relative;
-    aspect-ratio: 4 / 5;
-    border: 1px solid var(--line);
-    border-radius: var(--r-xl);
-    background:
-        radial-gradient(80% 60% at 50% 18%, var(--brand-tint), transparent 70%),
-        linear-gradient(180deg, var(--surface), var(--bg-2));
-    box-shadow: var(--shadow-md);
-    overflow: hidden;
-    cursor: crosshair;
-}
-
-.bodymap__figure {
-    position: absolute;
-    inset: 8% 0 0;
-    width: 100%;
-    height: 84%;
-    margin-inline: auto;
-    color: #d9cfc1;            /* silhouette fill */
-    /* fill is inherited by every child shape (circle/rect/path); no stroke so
-       the overlapping primitives merge into one seamless silhouette */
-    fill: currentColor;
-    stroke: none;
-}
-
-.bodymap__marker {
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    margin: -9px 0 0 -9px;
-    padding: 0;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    background: var(--brand);
-    box-shadow: 0 2px 8px rgba(243, 113, 0, 0.5);
-    cursor: pointer;
-    transition: transform 0.2s var(--ease);
-}
-
-.bodymap__marker::after {
-    content: "";
-    position: absolute;
-    inset: -8px;
-    border-radius: 50%;
-    border: 2px solid var(--brand);
-    opacity: 0.6;
-    animation: ping 2.6s var(--ease-out) infinite;
-}
-
-.bodymap__marker:hover,
-.bodymap__marker.is-active {
-    transform: scale(1.25);
-}
-
-.bodymap__marker.is-biopsied {
-    background: #3f6fd8;
-    box-shadow: 0 2px 8px rgba(63, 111, 216, 0.5);
-}
-
-.bodymap__marker.is-biopsied::after {
-    border-color: #3f6fd8;
-}
-
-@keyframes ping {
-    0% { transform: scale(0.7); opacity: 0.7; }
-    70%, 100% { transform: scale(1.9); opacity: 0; }
-}
-
-.bodymap__tooltip {
-    position: absolute;
-    z-index: 4;
-    min-width: 168px;
-    padding: 0.7rem 0.85rem;
-    border: 1px solid var(--line);
-    border-radius: var(--r-md);
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(8px);
-    box-shadow: var(--shadow-lg);
-    transform: translate(-50%, calc(-100% - 16px));
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s var(--ease);
-}
-
-.bodymap__tooltip.is-visible {
-    opacity: 1;
-}
-
-.bodymap__tooltip h4 {
-    font-size: 0.98rem;
-}
-
-.bodymap__tooltip .meta {
-    margin-top: 0.2rem;
-    font-family: var(--font-mono);
-    font-size: 0.74rem;
-    color: var(--muted);
-    letter-spacing: 0.02em;
-}
-
-.bodymap__hint {
-    position: absolute;
-    left: 50%;
-    bottom: 0.9rem;
-    transform: translateX(-50%);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.4rem 0.85rem;
-    border-radius: var(--r-pill);
-    background: rgba(28, 24, 19, 0.74);
-    color: #fff;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
-    white-space: nowrap;
-    transition: opacity 0.3s var(--ease);
-}
-
-.bodymap__legend {
-    display: flex;
-    gap: 1.25rem;
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
-    color: var(--muted);
-}
-
-.bodymap__legend span {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-}
-
-.bodymap__legend i {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--brand);
-}
-
-.bodymap__legend i.biopsied {
-    background: #3f6fd8;
-}
-
-/* 11. Split section + checklist --------------------------------------- */
+/* 10. Split section + checklist --------------------------------------- */
 .split {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -1200,7 +1086,9 @@ sup {
 }
 
 .shot img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
+    height: auto;
     max-height: 520px;
     object-fit: contain;
     filter: var(--device-shadow);
@@ -1570,8 +1458,7 @@ sup {
 /* 16. Responsive ----------------------------------------------------- */
 @media (max-width: 1000px) {
     .hero__inner,
-    .app-hero__inner,
-    .bodymap__inner {
+    .app-hero__inner {
         grid-template-columns: 1fr;
     }
 
@@ -1605,6 +1492,14 @@ sup {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .product-intro {
+        grid-template-columns: 1fr;
+    }
+
+    .product-intro__actions {
+        justify-content: flex-start;
+    }
 }
 
 @media (max-width: 860px) {
@@ -1636,15 +1531,6 @@ sup {
     .nav-link {
         width: 100%;
         justify-content: space-between;
-    }
-
-    .nav-cta {
-        margin-left: 0;
-        margin-top: 0.3rem;
-    }
-
-    .nav-cta .button {
-        width: 100%;
     }
 
     .dropdown-panel {
@@ -1719,7 +1605,8 @@ sup {
     :root { --section-y: clamp(3.5rem, 12vw, 5rem); }
 
     .bento,
-    .card-grid {
+    .card-grid,
+    .company-summary .checklist {
         grid-template-columns: 1fr;
     }
 
