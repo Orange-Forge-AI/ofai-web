@@ -635,6 +635,8 @@ sup {
 .hero__inner--simple {
     display: block;
     max-width: 840px;
+    margin-left: max(var(--pad), calc((100vw - var(--container)) / 2 + clamp(2rem, 5vw, 4rem)));
+    margin-right: auto;
 }
 
 .hero__inner--simple .hero__lead {
@@ -691,17 +693,16 @@ sup {
 }
 
 .hero__principles li {
-    position: relative;
-    padding-left: 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
     color: var(--muted);
     font-size: 0.98rem;
 }
 
 .hero__principles li::before {
     content: "";
-    position: absolute;
-    left: 0;
-    top: 0.78em;
+    flex: 0 0 auto;
     width: 0.4rem;
     height: 0.4rem;
     border-radius: 50%;
@@ -752,7 +753,7 @@ sup {
 .product-showcase {
     display: grid;
     grid-template-columns: 1fr;
-    gap: clamp(1.8rem, 4vw, 3rem);
+    gap: clamp(1.2rem, 2.8vw, 2.1rem);
 }
 
 .product-showcase__copy {
@@ -826,7 +827,7 @@ sup {
 }
 
 .product-device-stack__image {
-    width: min(100%, 920px);
+    width: min(94.5%, 869px);
     filter: var(--device-shadow);
 }
 
@@ -1063,6 +1064,10 @@ sup {
     object-fit: contain;
 }
 
+.split__media--ipad-edit picture {
+    aspect-ratio: 4260 / 3408;
+}
+
 .split__media--phone-half img {
     display: block;
     width: 50%;
@@ -1157,9 +1162,9 @@ sup {
 }
 
 .app-lockup img {
-    width: clamp(92px, 11vw, 132px);
-    height: clamp(92px, 11vw, 132px);
-    border-radius: clamp(22px, 2.6vw, 32px);
+    width: clamp(86px, 10.3vw, 124px);
+    height: clamp(86px, 10.3vw, 124px);
+    border-radius: clamp(21px, 2.45vw, 30px);
     box-shadow: var(--shadow-md);
 }
 
@@ -1172,7 +1177,7 @@ sup {
 }
 
 .app-hero__title {
-    font-size: clamp(2.7rem, 5.35vw, 4.45rem);
+    font-size: clamp(2.55rem, 5vw, 4.15rem);
     line-height: 0.94;
     letter-spacing: 0;
 }
@@ -1186,7 +1191,7 @@ sup {
 
 .app-hero__media picture {
     display: block;
-    width: 100%;
+    width: min(85%, 1003px);
 }
 
 .app-hero__media .device-stack {
@@ -1197,23 +1202,53 @@ sup {
 
 /* screenshot band */
 .shot-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: end;
+    display: flex;
+    align-items: start;
+    justify-content: center;
     gap: clamp(1.2rem, 3vw, 2.5rem);
     margin-top: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .shot {
+    --shot-media-height: clamp(263px, 31.73vw, 402px);
+    --shot-max-height: 520px;
+    --shot-width: auto;
+    display: grid;
+    grid-template-rows: var(--shot-media-height) auto;
+    flex: 0 0 var(--shot-width);
+    max-width: 100%;
     margin: 0;
     text-align: center;
+}
+
+.shot--phone {
+    --shot-max-height: clamp(170px, 20.5vw, 260px);
+    --shot-width: clamp(170px, 17vw, 240px);
+}
+
+.shot--ipad {
+    --shot-max-height: clamp(263px, 31.73vw, 402px);
+    --shot-width: clamp(202px, 24.33vw, 309px);
+}
+
+.shot--mac {
+    --shot-max-height: clamp(239px, 28.78vw, 365px);
+    --shot-width: clamp(358px, 43.17vw, 548px);
+}
+
+.shot picture {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: var(--shot-media-height);
 }
 
 .shot img {
     width: auto;
     max-width: 100%;
     height: auto;
-    max-height: 520px;
+    margin-inline: auto;
+    max-height: var(--shot-max-height);
     object-fit: contain;
     filter: var(--device-shadow);
 }
@@ -1692,10 +1727,15 @@ sup {
     }
 
     .shot-grid {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 2.5rem;
         max-width: 420px;
         margin-inline: auto;
+    }
+
+    .shot {
+        --shot-media-height: var(--shot-max-height);
     }
 
     .shot--raise img { transform: none; }
@@ -1729,9 +1769,9 @@ sup {
     }
 
     .app-lockup img {
-        width: clamp(72px, 22vw, 92px);
-        height: clamp(72px, 22vw, 92px);
-        border-radius: 18px;
+        width: clamp(68px, 20vw, 86px);
+        height: clamp(68px, 20vw, 86px);
+        border-radius: 17px;
     }
 
     .app-lockup .eyebrow {
@@ -1744,7 +1784,7 @@ sup {
     }
 
     .app-hero__title {
-        font-size: clamp(2rem, 10vw, 2.7rem);
+        font-size: clamp(1.9rem, 9.4vw, 2.55rem);
     }
 
     .bento,
