@@ -1049,6 +1049,28 @@ sup {
     filter: var(--device-shadow);
 }
 
+.split__media--landscape-height picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 4260 / 2840;
+}
+
+.split__media--landscape-height img {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.split__media--phone-half img {
+    display: block;
+    width: 50%;
+    max-width: 270px;
+    height: auto;
+    margin-inline: auto;
+}
+
 .checklist {
     display: grid;
     gap: 0.9rem;
@@ -1117,53 +1139,59 @@ sup {
 
 .app-hero__inner {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-    align-items: center;
-    gap: clamp(2rem, 5vw, 4rem);
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 0;
 }
 
 .app-lockup {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.4rem;
+    gap: clamp(1rem, 2.4vw, 1.6rem);
+    margin-bottom: 1.5rem;
+}
+
+.app-lockup picture {
+    flex: 0 0 auto;
+    line-height: 0;
 }
 
 .app-lockup img {
-    width: 68px;
-    height: 68px;
-    border-radius: 16px;
+    width: clamp(92px, 11vw, 132px);
+    height: clamp(92px, 11vw, 132px);
+    border-radius: clamp(22px, 2.6vw, 32px);
     box-shadow: var(--shadow-md);
 }
 
+.app-lockup__copy {
+    min-width: 0;
+}
+
 .app-lockup .eyebrow {
-    margin: 0;
+    margin: 0 0 0.55rem;
 }
 
 .app-hero__title {
-    font-size: clamp(2.6rem, 5.5vw, 4.2rem);
-    letter-spacing: -0.035em;
+    font-size: clamp(2.7rem, 5.35vw, 4.45rem);
+    line-height: 0.94;
+    letter-spacing: 0;
 }
 
 .app-hero__media {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 380px;
+    margin-block: clamp(1.8rem, 4vw, 3rem);
 }
 
-.app-hero__media .device-main {
+.app-hero__media picture {
+    display: block;
     width: 100%;
-    filter: var(--device-shadow);
 }
 
-.app-hero__media .device-phone {
-    position: absolute;
-    right: 0;
-    bottom: -6%;
-    width: 30%;
-    min-width: 120px;
+.app-hero__media .device-stack {
+    width: 100%;
+    height: auto;
     filter: var(--device-shadow);
 }
 
@@ -1560,8 +1588,7 @@ sup {
 
     .hero__lead { max-width: 46ch; }
 
-    .hero__media,
-    .app-hero__media {
+    .hero__media {
         order: 2;
         max-width: 620px;
         margin-inline: auto;
@@ -1696,6 +1723,29 @@ sup {
 
 @media (max-width: 560px) {
     :root { --section-y: clamp(3.5rem, 12vw, 5rem); }
+
+    .app-lockup {
+        gap: 0.8rem;
+    }
+
+    .app-lockup img {
+        width: clamp(72px, 22vw, 92px);
+        height: clamp(72px, 22vw, 92px);
+        border-radius: 18px;
+    }
+
+    .app-lockup .eyebrow {
+        font-size: clamp(0.5rem, 1.6vw, 0.62rem);
+        margin-bottom: 0.35rem;
+    }
+
+    .app-lockup .eyebrow::before {
+        width: 1rem;
+    }
+
+    .app-hero__title {
+        font-size: clamp(2rem, 10vw, 2.7rem);
+    }
 
     .bento,
     .card-grid {
