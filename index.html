@@ -51,7 +51,7 @@
                     <div class="dropdown-panel" id="products-dropdown">
                         <a class="dropdown-product" href="molejournal.html">
                             <span>MoleJournal</span>
-                            <small>A private journal for your skin records</small>
+                            <small>A journal for your skin records</small>
                         </a>
                     </div>
                 </li>
@@ -64,6 +64,7 @@
     <main id="main">
         <!-- ============ HERO ============ -->
         <section class="hero hero--company" id="home" aria-labelledby="hero-title">
+            <img class="hero__watermark" src="assets/brand/logo.png" alt="" aria-hidden="true">
             <div class="container hero__inner hero__inner--simple">
                 <div class="hero__copy">
                     <p class="eyebrow">Independent software company · Texas</p>
@@ -71,44 +72,55 @@
                     <p class="hero__lead">
                         <span class="brand-name">Orange Forge AI<sup>TM</sup></span> builds focused, private apps that keep your data on your own device.
                     </p>
-                    <p class="hero__note"><span class="dot" aria-hidden="true"></span> User-owned tools · No accounts by default · Practical native software</p>
+                    <p class="hero__note">User-owned tools · No accounts by default · Practical native software</p>
+                    <div class="hero__company-summary" id="philosophy">
+                        <p>We build focused apps and finish them with care.</p>
+                        <ul class="hero__principles" aria-label="Orange Forge AI principles">
+                            <li>On-device first records</li>
+                            <li>No trackers, ads, or unrequested cloud</li>
+                            <li>Native Apple platform craft</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ============ MOLEJOURNAL TEASER ============ -->
         <section class="section section--alt" id="molejournal" aria-labelledby="molejournal-title">
-            <div class="container product-intro" data-reveal>
-                <div class="section-head">
+            <div class="container product-showcase" data-reveal>
+                <div class="product-showcase__copy">
                     <p class="eyebrow">MoleJournal</p>
-                    <h2 id="molejournal-title">A private journal for your skin records.</h2>
+                    <h2 id="molejournal-title">A journal for your skin records.</h2>
                     <p>
-                        Keep mole photos, measurements, notes, and body locations organized on your own device. MoleJournal is calm, local-first, and built for personal recordkeeping.
+                        Keep dated photos, measurements, notes, and body locations organized on your own device.
+                    </p>
+                    <p>
+                        Instead of relying on scattered photos, memory, or handwritten notes, MoleJournal lets you create profiles, mark each mole on a body model, add dated photos, record measurements, and keep optional notes. Each mole gets its own timeline, so past entries are easier to review and compare over time.
                     </p>
                 </div>
-                <div class="product-intro__actions">
-                    <a class="button button-primary" href="molejournal.html">Explore MoleJournal <span class="arrow" aria-hidden="true">→</span></a>
-                </div>
-            </div>
-        </section>
 
-        <!-- ============ COMPANY ============ -->
-        <section class="section" id="philosophy" aria-labelledby="philosophy-title">
-            <div class="container company-summary" data-reveal>
-                <p class="eyebrow">Company</p>
-                <h2 id="philosophy-title">We forge software you actually own.</h2>
-                <p style="margin-top:1.1rem">
-                    <span class="brand-name">Orange Forge AI<sup>TM</sup></span> is an independent company in Texas. We build focused apps and finish them with care.
-                </p>
-                <p style="margin-top:1rem;color:var(--muted)">
-                    Our principle is simple: your data is yours. Our apps work without accounts, keep information on your device when possible, and let you take a backup whenever you like.
-                </p>
-                <ul class="checklist">
-                    <li>On-device first — your records stay with you</li>
-                    <li>No trackers, no ads, no cloud you did not ask for</li>
-                    <li>Built natively for Apple platforms</li>
-                    <li>Crafted in detail, not churned out</li>
-                </ul>
+                <div class="product-device-stack" aria-label="MoleJournal screenshots on Mac, iPad, and iPhone">
+                    <picture>
+                        <source type="image/webp"
+                            srcset="assets/screenshots/stacked_shots_main.webp 3768w"
+                            sizes="(max-width: 1000px) 92vw, 920px">
+                        <img class="product-device-stack__image" src="assets/screenshots/stacked_shots_main.png" width="3768" height="2052"
+                            alt="MoleJournal screenshots stacked on MacBook Pro, iPad Pro, and iPhone" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+
+                <div class="product-showcase__details">
+                    <ul class="product-showcase__list" aria-label="What MoleJournal does">
+                        <li>Create separate profiles for yourself or family recordkeeping.</li>
+                        <li>Place moles on a 3D body model.</li>
+                        <li>Save dated photos, measurements, notes, and biopsy details in one timeline.</li>
+                        <li>Export and import backups when you want an extra copy.</li>
+                        <li>Native Mac, iPad, and iPhone support.</li>
+                    </ul>
+                    <div class="product-showcase__actions">
+                        <a class="button button-primary" href="molejournal.html">Explore MoleJournal <span class="arrow" aria-hidden="true">→</span></a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
