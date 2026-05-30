@@ -6,7 +6,7 @@
    layouts with bento grids and glass. One dark anchor (the footer).
 
    Authored as plain CSS (no build step) so the site stays statically
-   hostable on GitHub Pages. Organised top-down:
+   hostable on GitHub Pages. Organized top-down:
      1. Fonts            6. Header / nav        11. Split + checklist
      2. Tokens           7. Hero                12. Showcase strip
      3. Base/reset       8. Stats               13. App page (MoleJournal)
@@ -610,6 +610,19 @@ sup {
     pointer-events: none;
 }
 
+.hero__watermark {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: auto;
+    max-width: none;
+    opacity: 0.07;
+    pointer-events: none;
+    user-select: none;
+}
+
 .hero__inner {
     position: relative;
     z-index: 1;
@@ -657,12 +670,42 @@ sup {
     gap: 0.5rem;
 }
 
-.hero__note .dot {
-    width: 8px;
-    height: 8px;
+.hero__company-summary {
+    max-width: 720px;
+    margin-top: 1.8rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba(154, 69, 0, 0.18);
+}
+
+.hero__company-summary p {
+    color: var(--ink-2);
+}
+
+.hero__principles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 1rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hero__principles li {
+    position: relative;
+    padding-left: 1.15rem;
+    color: var(--muted);
+    font-size: 0.98rem;
+}
+
+.hero__principles li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.78em;
+    width: 0.4rem;
+    height: 0.4rem;
     border-radius: 50%;
-    background: #4f9d6b;
-    box-shadow: 0 0 0 4px rgba(79, 157, 107, 0.18);
+    background: var(--brand);
 }
 
 /* device cluster — a large mac + an overlapping phone, both transparent */
@@ -706,32 +749,85 @@ sup {
     animation: rise 1s var(--ease-out) 0.2s both;
 }
 
-.product-intro {
+.product-showcase {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: clamp(1.5rem, 5vw, 4rem);
+    grid-template-columns: 1fr;
+    gap: clamp(1.8rem, 4vw, 3rem);
 }
 
-.product-intro .section-head {
-    max-width: 780px;
+.product-showcase__copy {
+    max-width: none;
 }
 
-.product-intro__actions {
+.product-showcase__copy h2 {
+    font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+}
+
+.product-showcase__copy p {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: clamp(1.02rem, 1.5vw, 1.15rem);
+}
+
+.product-showcase__copy .eyebrow {
+    margin-top: 0;
+}
+
+.product-showcase__details {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1.8rem;
+}
+
+.product-showcase__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem 1.3rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.product-showcase__list li {
+    position: relative;
+    padding-left: 1.45rem;
+    color: var(--ink-2);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.product-showcase__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 0.48rem;
+    height: 0.48rem;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 0 4px rgba(243, 113, 0, 0.12);
+}
+
+.product-showcase__actions {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
-.product-intro__actions .button {
+.product-showcase__actions .button {
     white-space: nowrap;
 }
 
-.company-summary {
-    max-width: 840px;
+.product-device-stack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-.company-summary .checklist {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.product-device-stack__image {
+    width: min(100%, 920px);
+    filter: var(--device-shadow);
 }
 
 @keyframes rise {
@@ -1493,12 +1589,8 @@ sup {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .product-intro {
+    .product-showcase__list {
         grid-template-columns: 1fr;
-    }
-
-    .product-intro__actions {
-        justify-content: flex-start;
     }
 }
 
@@ -1599,14 +1691,14 @@ sup {
         grid-column: 1 / -1;
         max-width: none;
     }
+
 }
 
 @media (max-width: 560px) {
     :root { --section-y: clamp(3.5rem, 12vw, 5rem); }
 
     .bento,
-    .card-grid,
-    .company-summary .checklist {
+    .card-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1619,6 +1711,18 @@ sup {
     .stats { grid-template-columns: 1fr 1fr; }
 
     .hero__device-phone { width: 30%; }
+
+    .hero__watermark {
+        opacity: 0.055;
+    }
+
+    .hero__principles {
+        display: grid;
+    }
+
+    .product-showcase__actions .button {
+        width: 100%;
+    }
 
     .button-row .button {
         width: 100%;
