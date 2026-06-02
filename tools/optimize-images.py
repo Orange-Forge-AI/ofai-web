@@ -9,9 +9,10 @@ runtime. Re-run it whenever you add or replace source PNGs in assets/.
     python3 tools/optimize-images.py
 
 Requires Pillow (`pip install Pillow`). Originals are never modified; new
-`<name>.webp` files are written next to each source image so the existing PNGs
-remain available as <picture> fallbacks. The WebPs keep the original pixel
-dimensions to avoid soft screenshots from downscaled derivatives.
+`<name>.webp` files are written next to each source image. The WebPs keep the
+original pixel dimensions to avoid soft screenshots from downscaled
+derivatives. Delete source PNGs manually after verifying the website points at
+the WebP assets you intend to ship.
 """
 import os
 import glob

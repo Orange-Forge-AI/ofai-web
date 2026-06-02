@@ -10,7 +10,7 @@
 
 - Use `tools/optimize-images.py` to create `.webp` derivatives from PNG image assets when adding or replacing optimized website imagery.
 - When converting images to `.webp`, always keep the original image's pixel resolution. Do not downscale or otherwise resize the converted image unless explicitly requested.
-- Keep original PNG files as fallbacks alongside generated `.webp` files.
+- Optimized website imagery can be WebP-only after conversion. Keep PNG source files only when they are intentionally needed, such as `assets/brand/logo.png`.
 
 ## Branding And Legal Name
 
