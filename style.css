@@ -1142,6 +1142,10 @@ sup {
     padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
 }
 
+.app-hero--compact-after {
+    padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
 .app-hero__inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -1198,6 +1202,10 @@ sup {
     width: 100%;
     height: auto;
     filter: var(--device-shadow);
+}
+
+.section--after-app-hero {
+    padding-top: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 /* screenshot band */
