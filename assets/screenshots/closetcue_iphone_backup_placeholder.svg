@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1470 3000" role="img" aria-labelledby="title desc">
+  <title id="title">ClosetCue backup screenshot placeholder</title>
+  <desc id="desc">Placeholder iPhone screenshot for ClosetCue backup and restore.</desc>
+  <defs>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf4"/>
+      <stop offset="1" stop-color="#eef6f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1470" height="3000" rx="220" fill="#17120d"/>
+  <rect x="74" y="94" width="1322" height="2812" rx="154" fill="url(#screen)"/>
+  <rect x="505" y="140" width="460" height="58" rx="29" fill="#17120d"/>
+  <text x="735" y="420" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="128" font-weight="700" fill="#1c1813">Backup</text>
+  <text x="735" y="528" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="54" fill="#8a8276">screenshot placeholder</text>
+  <rect x="240" y="760" width="990" height="990" rx="150" fill="#f37100" opacity="0.16"/>
+  <path d="M735 990v430M560 1245l175 175 175-175" fill="none" stroke="#2f6f64" stroke-width="80" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="245" y="1910" width="980" height="180" rx="64" fill="#2f6f64" opacity="0.18"/>
+  <rect x="245" y="2220" width="980" height="180" rx="64" fill="#f37100" opacity="0.18"/>
+  <rect x="310" y="2570" width="850" height="64" rx="32" fill="#1c1813" opacity="0.12"/>
+</svg>

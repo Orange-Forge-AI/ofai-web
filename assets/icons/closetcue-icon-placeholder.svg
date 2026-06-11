@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">ClosetCue icon placeholder</title>
+  <desc id="desc">A placeholder app icon for ClosetCue.</desc>
+  <defs>
+    <linearGradient id="bg" x1="160" y1="96" x2="864" y2="928" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f37100"/>
+      <stop offset="0.55" stop-color="#f59a45"/>
+      <stop offset="1" stop-color="#2f6f64"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="28" stdDeviation="34" flood-color="#1c1813" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="224" fill="url(#bg)"/>
+  <circle cx="780" cy="218" r="148" fill="#fff3e8" opacity="0.22"/>
+  <circle cx="238" cy="790" r="180" fill="#0f3d38" opacity="0.14"/>
+  <g filter="url(#soft-shadow)">
+    <rect x="212" y="284" width="600" height="456" rx="72" fill="#fffaf4"/>
+    <path d="M512 282c0-46 37-82 83-82 44 0 80 34 82 78" fill="none" stroke="#2f6f64" stroke-width="42" stroke-linecap="round"/>
+    <path d="M512 318v58" fill="none" stroke="#2f6f64" stroke-width="42" stroke-linecap="round"/>
+    <path d="M512 376 348 522c-24 22-9 62 24 62h280c33 0 48-40 24-62L512 376Z" fill="none" stroke="#1c1813" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M334 672h356" fill="none" stroke="#f37100" stroke-width="34" stroke-linecap="round"/>
+  </g>
+  <text x="512" y="846" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="66" font-weight="700" fill="#fffaf4">ClosetCue</text>
+</svg>
