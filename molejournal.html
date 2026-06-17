@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="MoleJournal is a private, on-device journal for your skin records — keep dated photos, measurements, notes, and 3D body locations organized on your own device. No accounts, no cloud.">
+    <meta name="description" content="MoleJournal is a private, on-device journal for your skin records &mdash; keep dated photos, measurements, notes, and 3D body locations organized on your own device. No accounts, no cloud.">
     <meta name="theme-color" content="#f37100">
-    <title>MoleJournal — A private journal for your skin records | Orange Forge AI</title>
+    <title>MoleJournal &mdash; A private journal for your skin records | Orange Forge AI</title>
 
     <link rel="icon" type="image/png" sizes="256x256" href="assets/brand/logo.png">
     <link rel="apple-touch-icon" href="assets/brand/logo.png">
@@ -13,9 +13,9 @@
     <!-- Open Graph / social -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://orangeforgeai.com/molejournal.html">
-    <meta property="og:title" content="MoleJournal — A private journal for your skin records">
-    <meta property="og:description" content="Keep dated photos, measurements, notes, and 3D body locations for every mole — all on your own device. No accounts, no cloud.">
-    <meta property="og:image" content="https://orangeforgeai.com/assets/brand/logo.png">
+    <meta property="og:title" content="MoleJournal &mdash; A private journal for your skin records">
+    <meta property="og:description" content="Keep dated photos, measurements, notes, and 3D body locations for every mole &mdash; all on your own device. No accounts, no cloud.">
+    <meta property="og:image" content="https://orangeforgeai.com/assets/icons/MoleJournal%20icon.webp">
     <meta name="twitter:card" content="summary">
 
     <!-- Preload the self-hosted variable fonts to avoid a flash of fallback text -->
@@ -26,7 +26,7 @@
     <!-- Mark JS as available so reveal-on-scroll never hides content without it -->
     <script>document.documentElement.classList.add("js");</script>
 </head>
-<body>
+<body class="product-page product-page--molejournal">
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
@@ -66,265 +66,181 @@
     </header>
 
     <main id="main">
-        <!-- ============ APP HERO ============ -->
-        <section class="app-hero app-hero--compact-after" aria-labelledby="app-title">
-            <div class="container app-hero__inner">
-                <div data-reveal>
-                    <div class="app-lockup">
+        <!-- ============ PRODUCT HERO ============ -->
+        <section class="mj-hero" aria-labelledby="app-title">
+            <div class="container mj-hero__grid">
+                <div class="mj-hero__copy">
+                    <div class="app-lockup app-lockup--journal">
                         <picture>
                             <source type="image/webp" srcset="assets/icons/MoleJournal%20icon.webp">
                             <img src="assets/icons/MoleJournal%20icon.webp" alt="" width="132" height="132">
                         </picture>
                         <div class="app-lockup__copy">
                             <p class="eyebrow">Private skin journal</p>
-                            <h1 class="app-hero__title" id="app-title">MoleJournal</h1>
+                            <h1 class="mj-title" id="app-title">MoleJournal</h1>
                         </div>
                     </div>
-                    <p class="lead" style="margin-top:1.3rem">
-                        A private journal for your skin records — keep dated photos, measurements, notes, and body locations organized on your own device.
+                    <p class="mj-lead">
+                        A private mole journal for keeping dated photos, measurements, notes, and body locations organized on your own device.
                     </p>
-                    <p style="margin-top:1.1rem;color:var(--muted)">
-                        Build a simple, dated record of moles over time. Add profiles, place each mole on a 3D body model, save photos and measurements, and keep notes together in one calm, easy-to-use app.
-                    </p>
-                    <div class="app-hero__media" aria-label="MoleJournal screenshots">
-                        <picture>
-                            <source type="image/webp"
-                                srcset="assets/screenshots/stacked_iphones.webp 3749w"
-                                sizes="(max-width: 1240px) calc(85vw - 1.87rem), 1003px">
-                            <img class="device-stack" src="assets/screenshots/stacked_iphones.webp" width="3749" height="1893"
-                                alt="Stacked MoleJournal iPhone screens showing private skin records" fetchpriority="high" decoding="async">
-                        </picture>
-                    </div>
-                    <p style="margin-top:1rem;color:var(--muted)">
-                        Your records stay on your device unless you choose to export a backup.
+                    <p class="mj-muted">
+                        Create profiles, place moles on a 3D body model, and keep each mole's record in a calm timeline that is easier to review over time.
                     </p>
                     <div class="button-row">
                         <a class="button button-primary" href="https://apps.apple.com/us/app/molejournal/id6771623193" target="_blank" rel="noopener">Download MoleJournal</a>
                         <a class="button button-secondary" href="app-privacy.html#molejournal">Read the privacy policy</a>
                     </div>
-                    <p class="notice">
-                        MoleJournal is for personal recordkeeping only. It is <strong>not a medical device</strong>, does not diagnose skin cancer or any other condition, does not analyze photos, and does not replace professional medical care. Contact a dermatologist or other qualified clinician for medical advice.
-                    </p>
                 </div>
 
+                <figure class="mj-hero__devices">
+                    <img src="assets/screenshots/stacked_shots_main.webp" width="3764" height="2046"
+                        alt="MoleJournal displayed on MacBook Pro, iPad Pro, and iPhone" fetchpriority="high" decoding="async">
+                    <figcaption>Native iPhone, iPad, and Mac interfaces keep the same journal structure at every screen size.</figcaption>
+                </figure>
+
+                <p class="notice mj-notice">
+                    MoleJournal is for personal recordkeeping only. It is <strong>not a medical device</strong>, does not diagnose skin cancer or any other condition, does not analyze photos, and does not replace professional medical care. Contact a dermatologist or other qualified clinician for medical advice.
+                </p>
             </div>
         </section>
 
-        <!-- ============ WHAT IT DOES ============ -->
-        <section class="section section--after-app-hero" aria-labelledby="what-title">
-            <div class="container split">
-                <div data-reveal>
-                    <p class="eyebrow">What it does</p>
-                    <h2 id="what-title">One private place to keep mole records organized.</h2>
-                    <p style="margin-top:1.1rem">
-                        Instead of relying on scattered photos, memory, or handwritten notes, MoleJournal lets you create a profile, mark each mole on a body model, add dated photos, record measurements, and keep optional notes. Each mole gets its own timeline, so past entries are easier to review and compare over time.
+        <!-- ============ PRIVATE JOURNAL ============ -->
+        <section class="mj-section" aria-labelledby="private-title">
+            <div class="container mj-feature-grid">
+                <div class="mj-copy-panel" data-reveal>
+                    <p class="eyebrow">Private journal</p>
+                    <h2 id="private-title">One calm place for personal mole records.</h2>
+                    <p>
+                        Instead of scattered camera-roll photos or handwritten notes, MoleJournal keeps profile details, mole locations, photos, measurements, and optional notes together.
                     </p>
+                    <ul class="mj-checklist" aria-label="MoleJournal private recordkeeping features">
+                        <li>No account required.</li>
+                        <li>Records and photos are stored on your device.</li>
+                        <li>Separate profiles help keep personal or family recordkeeping organized.</li>
+                    </ul>
                 </div>
-                <div data-reveal style="--reveal-delay:80ms">
-                    <ul class="checklist" aria-label="What MoleJournal does">
-                        <li>Create separate profiles for yourself or family recordkeeping.</li>
-                        <li>Place moles on a 3D body model.</li>
-                        <li>Save dated photos and measurements.</li>
-                        <li>Keep notes and biopsy details in one timeline.</li>
-                        <li>Export and import backups when you want an extra copy.</li>
-                        <li>Use the app without an account or cloud storage.</li>
+                <figure class="mj-phone-card" data-reveal style="--reveal-delay:90ms">
+                    <img src="assets/screenshots/iphone_profile_view_framed.webp" width="1470" height="3000"
+                        alt="MoleJournal profile dashboard on iPhone" loading="lazy" decoding="async">
+                    <figcaption>Profiles, counts, and record summaries are presented without clutter.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ============ BODY MAP ============ -->
+        <section class="mj-section mj-section--wash" aria-labelledby="body-map-title">
+            <div class="container mj-map-layout">
+                <figure class="mj-map-figure" data-reveal>
+                    <img src="assets/screenshots/mac_profile_view_framed.webp" width="4260" height="2840"
+                        alt="MoleJournal 3D body map on Mac" loading="lazy" decoding="async">
+                </figure>
+                <div class="mj-copy-panel" data-reveal style="--reveal-delay:90ms">
+                    <p class="eyebrow">3D body map</p>
+                    <h2 id="body-map-title">Put each mole where it belongs.</h2>
+                    <p>
+                        The 3D body map makes location recordkeeping more visual than a written description alone. Green markers show active mole records, and blue markers indicate biopsied records.
+                    </p>
+                    <div class="mj-legend" aria-label="MoleJournal body map marker legend">
+                        <span><i class="mj-dot mj-dot--active"></i>Active</span>
+                        <span><i class="mj-dot mj-dot--biopsied"></i>Biopsied</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TIMELINE ============ -->
+        <section class="mj-section" aria-labelledby="timeline-title">
+            <div class="container mj-timeline-layout">
+                <div class="mj-copy-panel" data-reveal>
+                    <p class="eyebrow">Dated timeline</p>
+                    <h2 id="timeline-title">Each mole gets its own history.</h2>
+                    <p>
+                        Photos, measurements, and notes appear as dated entries, so past records stay connected to the right mole.
+                    </p>
+                    <div class="mj-timeline-sample" aria-label="Example MoleJournal timeline entries">
+                        <div><time>Jun 1</time><span>Measured 2 x 3 mm</span></div>
+                        <div><time>Jun 1</time><span>Photo added</span></div>
+                        <div><time>May 27</time><span>First entry</span></div>
+                    </div>
+                </div>
+                <figure class="mj-ipad-card" data-reveal style="--reveal-delay:90ms">
+                    <img src="assets/screenshots/ipad_mole_timeline_view_framed.webp" width="2300" height="3000"
+                        alt="MoleJournal mole timeline on iPad" loading="lazy" decoding="async">
+                    <figcaption>Timeline entries keep photos and measurements in chronological context.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ============ ADD ENTRY ============ -->
+        <section class="mj-section mj-section--wash" aria-labelledby="entry-title">
+            <div class="container mj-entry-layout">
+                <figure class="mj-ipad-card" data-reveal>
+                    <img src="assets/screenshots/ipad_mole_edit_view_framed.webp" width="2300" height="3000"
+                        alt="MoleJournal mole details editor on iPad" loading="lazy" decoding="async">
+                </figure>
+                <div class="mj-copy-panel" data-reveal style="--reveal-delay:90ms">
+                    <p class="eyebrow">Add an entry</p>
+                    <h2 id="entry-title">Photos, measurements, and notes stay together.</h2>
+                    <p>
+                        Add dated photos, record height and width, and keep optional notes or biopsy details in one structured record.
+                    </p>
+                    <ul class="mj-checklist" aria-label="MoleJournal entry fields">
+                        <li>Photo attachments with dates.</li>
+                        <li>Measurements in one consistent place.</li>
+                        <li>Optional notes and biopsy details.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- ============ SCREENSHOT BAND ============ -->
-        <section class="section section--alt" aria-labelledby="screenshots-title">
-            <div class="container">
-                <div class="section-head section-head--center" data-reveal>
-                    <p class="eyebrow eyebrow--center">Product preview</p>
-                    <h2 id="screenshots-title">Photos, notes, timelines, and body locations stay together.</h2>
-                </div>
-
-                <div class="shot-grid" data-reveal>
-                    <figure class="shot shot--phone">
-                        <picture>
-                            <source type="image/webp"
-                                srcset="assets/screenshots/iphone_profile_view_framed.webp 1470w"
-                                sizes="(max-width: 860px) 90vw, 130px">
-                            <img src="assets/screenshots/iphone_profile_view_framed.webp" width="1470" height="3000"
-                                alt="The MoleJournal profile screen on iPhone" loading="lazy" decoding="async">
-                        </picture>
-                        <figcaption>Profiles help keep personal or family recordkeeping separate.</figcaption>
-                    </figure>
-
-                    <figure class="shot shot--ipad">
-                        <picture>
-                            <source type="image/webp"
-                                srcset="assets/screenshots/ipad_mole_timeline_view_framed.webp 2300w"
-                                sizes="(max-width: 860px) 90vw, 315px">
-                            <img src="assets/screenshots/ipad_mole_timeline_view_framed.webp" width="2300" height="3000"
-                                alt="A mole's dated timeline on iPad showing photos and measurements" loading="lazy" decoding="async">
-                        </picture>
-                        <figcaption>A dated timeline keeps photos, measurements, and notes connected to the right mole.</figcaption>
-                    </figure>
-
-                    <figure class="shot shot--mac">
-                        <picture>
-                            <source type="image/webp"
-                                srcset="assets/screenshots/mac_profile_view_framed.webp 4260w"
-                                sizes="(max-width: 860px) 90vw, 558px">
-                            <img src="assets/screenshots/mac_profile_view_framed.webp" width="4260" height="2840"
-                                alt="The MoleJournal profile screen on Mac" loading="lazy" decoding="async">
-                        </picture>
-                        <figcaption>A native Apple interface feels at home on iPhone, iPad, and Mac.</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ WHY IT HELPS ============ -->
-        <section class="section" aria-labelledby="why-title">
-            <div class="container split split--reverse">
-                <div class="split__media split__media--landscape-height split__media--ipad-edit" data-reveal>
-                    <picture>
-                        <source type="image/webp"
-                            srcset="assets/screenshots/ipad_mole_edit_view_framed.webp 2300w"
-                            sizes="(max-width: 860px) 90vw, 540px">
-                        <img src="assets/screenshots/ipad_mole_edit_view_framed.webp" width="2300" height="3000"
-                            alt="Editing a mole record in MoleJournal on iPad" loading="lazy" decoding="async">
-                    </picture>
-                </div>
-                <div data-reveal>
-                    <p class="eyebrow">Why it helps</p>
-                    <h2 id="why-title">A calmer way to keep a consistent record.</h2>
-                    <p style="margin-top:1.1rem">
-                        Mole records can be hard to keep consistent. Photos may end up in a camera roll, measurements may be written somewhere else, and body locations can be difficult to describe later.
-                    </p>
-                    <p style="margin-top:1rem;color:var(--muted)">
-                        MoleJournal brings those pieces together in a structured, visual format that is easier to maintain before a professional appointment or for your own personal history.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ FEATURE CARD GRID ============ -->
-        <section class="section section--alt" aria-labelledby="features-title">
-            <div class="container">
-                <div class="section-head section-head--center" data-reveal>
-                    <p class="eyebrow eyebrow--center">Designed around privacy and clarity</p>
-                    <h2 id="features-title">Built for personal recordkeeping.</h2>
-                </div>
-
-                <div class="card-grid">
-                    <article class="card" data-reveal>
-                        <span class="card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-                        </span>
-                        <h3 class="card__title">Private by design</h3>
-                        <p class="card__text">Your mole journal belongs to you. MoleJournal stores records and photos on your device, with user-controlled backup export when you want an extra copy.</p>
-                    </article>
-
-                    <article class="card" data-reveal style="--reveal-delay:80ms">
-                        <span class="card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-                        </span>
-                        <h3 class="card__title">Put each mole where it belongs</h3>
-                        <p class="card__text">Place mole markers directly on a 3D body model. It is a clearer, more natural way to remember location than flat diagrams or written descriptions alone.</p>
-                    </article>
-
-                    <article class="card" data-reveal style="--reveal-delay:160ms">
-                        <span class="card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-6 6c0 2.5 1.5 4 2.5 5.2.7.9 1 1.5 1.1 2.8h4.8c.1-1.3.4-1.9 1.1-2.8C16.5 13 18 11.5 18 9a6 6 0 0 0-6-6Z"/><path d="M9.5 21h5"/></svg>
-                        </span>
-                        <h3 class="card__title">Designed to feel calm</h3>
-                        <p class="card__text">MoleJournal uses a warm journal-style interface so recordkeeping feels simple, private, and approachable.</p>
-                    </article>
-
-                    <article class="card" data-reveal>
-                        <span class="card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6l4 2"/><circle cx="12" cy="13" r="8"/></svg>
-                        </span>
-                        <h3 class="card__title">A timeline for every mole</h3>
-                        <p class="card__text">Keep dated photos, measurements, and notes together so each mole's history stays organized over time.</p>
-                    </article>
-
-                    <article class="card" data-reveal style="--reveal-delay:80ms">
-                        <span class="card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="11" height="18" rx="2.5"/><path d="M8 18h3"/><path d="M16 7h3a1 1 0 0 1 1 1v9a3 3 0 0 1-3 3h-1"/></svg>
-                        </span>
-                        <h3 class="card__title">At home on Apple devices</h3>
-                        <p class="card__text">Use MoleJournal across iPhone, iPad, and Mac with a native interface designed for each screen size.</p>
-                    </article>
-
-                    <article class="card" data-reveal style="--reveal-delay:160ms">
-                        <span class="card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
-                        </span>
-                        <h3 class="card__title">You control your backups</h3>
-                        <p class="card__text">Create a backup file when you want an extra copy of your mole journal. Save it somewhere you trust and restore it later if needed.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ BACKUP & RESTORE ============ -->
-        <section class="section" aria-labelledby="backup-title">
-            <div class="container split">
-                <div data-reveal>
+        <!-- ============ BACKUPS ============ -->
+        <section class="mj-section" aria-labelledby="backup-title">
+            <div class="container mj-backup-layout">
+                <div class="mj-copy-panel" data-reveal>
                     <p class="eyebrow">Backup &amp; restore</p>
                     <h2 id="backup-title">Local records, backup files you choose.</h2>
-                    <p style="margin-top:1.1rem">
-                        Because MoleJournal keeps data local, backups matter. The app includes backup export and restore tools so you can keep an extra copy of your records.
+                    <p>
+                        Because records stay local, backups matter. MoleJournal includes export and restore tools so you can keep an extra copy somewhere you trust.
                     </p>
-                    <p style="margin-top:1rem;color:var(--muted)">
-                        A backup file can include profiles, mole records, and photos. You choose when to create it and where to store it.
-                    </p>
-                    <p class="notice">
+                    <p class="notice mj-notice">
                         Your records live on your device, so <strong>keeping your own backup is the way to protect them</strong> if you replace or reset your device.
                     </p>
                 </div>
-                <div class="split__media split__media--phone-half" data-reveal style="--reveal-delay:80ms">
-                    <picture>
-                        <source type="image/webp"
-                            srcset="assets/screenshots/iphone_backup_view_framed.webp 1470w"
-                            sizes="(max-width: 860px) 45vw, 270px">
-                        <img src="assets/screenshots/iphone_backup_view_framed.webp" width="1470" height="3000"
-                            alt="The MoleJournal backup and restore screen on iPhone" loading="lazy" decoding="async">
-                    </picture>
-                </div>
+                <figure class="mj-backup-phone" data-reveal style="--reveal-delay:90ms">
+                    <img src="assets/screenshots/iphone_backup_view_framed.webp" width="1470" height="3000"
+                        alt="MoleJournal backup and restore screen on iPhone" loading="lazy" decoding="async">
+                </figure>
             </div>
         </section>
 
         <!-- ============ FAQ ============ -->
-        <section class="section section--alt" aria-labelledby="faq-title">
+        <section class="mj-section mj-section--wash" aria-labelledby="faq-title">
             <div class="container">
-                <div class="section-head section-head--center" data-reveal>
+                <div class="mj-section-head" data-reveal>
                     <p class="eyebrow eyebrow--center">FAQ</p>
                     <h2 id="faq-title">Common questions</h2>
                 </div>
-
-                <div class="faq" data-reveal>
+                <div class="faq mj-faq" data-reveal>
                     <article class="faq-item">
                         <h3>Is MoleJournal a medical app?</h3>
                         <p>MoleJournal is for personal recordkeeping only. It is not a medical device and does not replace care from a dermatologist or other qualified clinician.</p>
                     </article>
-
                     <article class="faq-item">
                         <h3>Where are my records stored?</h3>
                         <p>Your profiles, mole records, measurements, notes, and photos are stored on your device. Orange Forge AI, LLC does not store your mole records or photos on its servers.</p>
                     </article>
-
                     <article class="faq-item">
                         <h3>Do I need an account?</h3>
                         <p>No. MoleJournal does not require an account or cloud profile.</p>
                     </article>
-
                     <article class="faq-item">
                         <h3>Can I keep a backup?</h3>
                         <p>Yes. MoleJournal lets you export a backup file that you control. You choose where to save it and whether to share it.</p>
                     </article>
-
                     <article class="faq-item">
                         <h3>What can I record?</h3>
                         <p>You can record mole locations, dated photos, measurements, notes, biopsy status, biopsy dates, and biopsy notes.</p>
                     </article>
-
                     <article class="faq-item">
                         <h3>What should I do if I am worried about a mole?</h3>
                         <p>Contact a dermatologist or other qualified clinician for medical advice.</p>
@@ -334,17 +250,16 @@
         </section>
 
         <!-- ============ FINAL CTA ============ -->
-        <section class="section" aria-labelledby="cta-title">
+        <section class="mj-section" aria-labelledby="cta-title">
             <div class="container">
-                <div class="cta" data-reveal>
-                    <div class="cta__spark" aria-hidden="true"></div>
-                    <p class="eyebrow eyebrow--center" style="color:var(--ember)">MoleJournal</p>
+                <div class="mj-cta" data-reveal>
+                    <p class="eyebrow eyebrow--center">MoleJournal</p>
                     <h2 id="cta-title">Start your private mole journal.</h2>
                     <p>Keep mole photos, measurements, notes, and body locations organized in one calm, on-device app. No account required.</p>
                     <div class="button-row">
                         <a class="button button-primary" href="https://apps.apple.com/us/app/molejournal/id6771623193" target="_blank" rel="noopener">Download MoleJournal</a>
-                        <a class="button button-secondary button--on-dark" href="support.html">Get support</a>
-                        <a class="button button-secondary button--on-dark" href="app-privacy.html#molejournal">View privacy policy</a>
+                        <a class="button button-secondary" href="support.html">Get support</a>
+                        <a class="button button-secondary" href="app-privacy.html#molejournal">View privacy policy</a>
                     </div>
                 </div>
             </div>
@@ -369,10 +284,16 @@
                     </div>
                 </div>
 
-                <nav class="footer__col" aria-label="Products">
+                <nav class="footer__col footer__products" aria-label="Products">
                     <h3>Products</h3>
-                    <a href="molejournal.html" aria-current="page">MoleJournal</a>
-                    <a href="closetcue.html">ClosetCue</a>
+                    <a class="footer-product footer-product--molejournal" href="molejournal.html" aria-current="page">
+                        <span>MoleJournal</span>
+                        <small>Private skin journal</small>
+                    </a>
+                    <a class="footer-product footer-product--closetcue" href="closetcue.html">
+                        <span>ClosetCue</span>
+                        <small>Wardrobe planner</small>
+                    </a>
                 </nav>
 
                 <nav class="footer__col" aria-label="Company">
@@ -391,7 +312,7 @@
 
             <div class="footer__bottom">
                 <p>&copy; 2026 Orange Forge AI, LLC. All rights reserved.</p>
-                <p>Texas, United States · <a href="mailto:support@orangeforgeai.com">support@orangeforgeai.com</a></p>
+                <p>Texas, United States &middot; <a href="mailto:support@orangeforgeai.com">support@orangeforgeai.com</a></p>
             </div>
             <p class="footer__disclaimer">
                 MoleJournal medical disclaimer: MoleJournal is for personal recordkeeping only. It is not a medical device, does not diagnose skin cancer or any other condition, does not analyze photos, and does not replace professional medical care. Contact a dermatologist or other qualified clinician for medical advice.

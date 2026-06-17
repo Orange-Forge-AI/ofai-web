@@ -1613,6 +1613,55 @@ sup {
     color: var(--on-dark);
 }
 
+.footer__products {
+    gap: 0.55rem;
+}
+
+.footer-product {
+    position: relative;
+    display: grid;
+    gap: 0.1rem;
+    min-height: 58px;
+    padding: 0.62rem 0.68rem 0.62rem 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.footer-product::before {
+    content: "";
+    position: absolute;
+    left: 0.62rem;
+    top: 0.7rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.08);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer-product--molejournal::before {
+    background-image: url("assets/icons/MoleJournal%20icon.webp");
+}
+
+.footer-product--closetcue::before {
+    background-image: url("assets/icons/closetcue-icon.webp");
+}
+
+.footer-product span {
+    color: var(--on-dark);
+    font-weight: 650;
+    line-height: 1.2;
+}
+
+.footer-product small {
+    color: var(--on-dark-muted);
+    font-size: 0.78rem;
+    line-height: 1.25;
+}
+
 .footer__bottom {
     display: flex;
     flex-wrap: wrap;
@@ -1862,5 +1911,1260 @@ sup {
     [data-reveal] {
         opacity: 1 !important;
         transform: none !important;
+    }
+}
+
+/* 18. Product overhaul --------------------------------------------------
+   Scoped additions for the client-facing product redesign. The original
+   shared static-site system remains for legal/support pages. */
+@font-face {
+    font-family: "Bodoni Moda OFAI";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("assets/fonts/BodoniModa-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Bodoni Moda OFAI";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("assets/fonts/BodoniModa-SemiBold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Bodoni Moda OFAI";
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url("assets/fonts/BodoniModa-SemiBoldItalic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "IBM Plex Mono OFAI";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("assets/fonts/IBMPlexMono-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "IBM Plex Mono OFAI";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("assets/fonts/IBMPlexMono-Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Archivo OFAI";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("assets/fonts/Archivo-Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Archivo Expanded OFAI";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("assets/fonts/ArchivoExpanded-SemiBold.ttf") format("truetype");
+}
+
+:root {
+    --mj-paper: #fbf5ec;
+    --mj-surface: #fffaf1;
+    --mj-surface-2: #f4eadb;
+    --mj-ink: #21170f;
+    --mj-muted: #7f7162;
+    --mj-line: rgba(160, 90, 36, 0.22);
+    --mj-sage: #6e8e76;
+    --mj-sage-soft: #e2eddf;
+    --mj-blue: #3a74d8;
+    --mj-shadow: 0 24px 58px -28px rgba(92, 52, 24, 0.34), 0 8px 20px -14px rgba(92, 52, 24, 0.2);
+
+    --cc-paper: #f2f0e8;
+    --cc-surface: #fbf8ef;
+    --cc-elevated: #eae7dc;
+    --cc-ink: #161412;
+    --cc-muted: #5c584f;
+    --cc-hairline: rgba(22, 20, 18, 0.18);
+    --cc-strong: rgba(22, 20, 18, 0.46);
+    --cc-spot: #f37100;
+    --cc-dark: #14120f;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+.button {
+    letter-spacing: 0;
+}
+
+.home-page::before,
+.product-page::before {
+    content: none;
+}
+
+.dropdown-product {
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 0.75rem;
+    align-items: center;
+}
+
+.dropdown-product::before {
+    content: "";
+    grid-row: 1 / span 2;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background-color: var(--brand-tint);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: var(--shadow-xs);
+}
+
+.dropdown-product[href$="molejournal.html"]::before {
+    background-image: url("assets/icons/MoleJournal%20icon.webp");
+}
+
+.dropdown-product[href$="closetcue.html"]::before {
+    background-image: url("assets/icons/closetcue-icon.webp");
+}
+
+/* Home: studio first impression -------------------------------------- */
+.studio-hero {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(2.4rem, 4.8vw, 4rem) clamp(1.25rem, 2.2vw, 1.8rem);
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.52), rgba(251,249,246,0) 58%),
+        repeating-linear-gradient(90deg, rgba(28,24,19,0.035) 0 1px, transparent 1px 62px),
+        var(--bg);
+}
+
+.studio-hero__backdrop {
+    position: absolute;
+    inset: auto 0 0;
+    height: 32%;
+    border-top: 1px solid var(--line);
+    background: linear-gradient(180deg, rgba(244, 239, 232, 0), var(--bg-2));
+    pointer-events: none;
+}
+
+.studio-hero__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.studio-hero__copy {
+    max-width: 650px;
+}
+
+.studio-hero__title {
+    font-size: clamp(2.8rem, 5.2vw, 5.25rem);
+    line-height: 1;
+}
+
+.studio-hero__brand {
+    display: block;
+    color: var(--brand);
+}
+
+.studio-hero__lead {
+    margin-top: 1.35rem;
+    max-width: 48ch;
+    color: var(--ink-2);
+    font-size: clamp(1.08rem, 1.8vw, 1.28rem);
+    line-height: 1.55;
+}
+
+.studio-hero__actions,
+.studio-hero__principles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.6rem;
+}
+
+.studio-hero__principles span {
+    padding: 0.48rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: var(--r-xs);
+    background: rgba(255,255,255,0.6);
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+}
+
+.studio-hero__tableau {
+    position: relative;
+    min-height: clamp(430px, 45vw, 640px);
+}
+
+.studio-hero__mole,
+.studio-hero__phone,
+.studio-hero__proof {
+    position: absolute;
+    filter: var(--device-shadow);
+}
+
+.studio-hero__mole {
+    right: 0;
+    bottom: 4%;
+    width: min(92%, 760px);
+}
+
+.studio-hero__phone {
+    left: 0;
+    bottom: 0;
+    width: min(24%, 170px);
+}
+
+.studio-hero__proof {
+    top: 2%;
+    left: 5%;
+    width: min(42%, 280px);
+    padding: 1rem;
+    border: 1px solid var(--cc-strong);
+    background: var(--cc-surface);
+    color: var(--cc-ink);
+    box-shadow: 10px 10px 0 var(--cc-spot);
+}
+
+.proof-label,
+.proof-title {
+    display: block;
+    font-family: "IBM Plex Mono OFAI", var(--font-mono);
+    text-transform: uppercase;
+}
+
+.proof-label {
+    font-size: 0.62rem;
+    color: var(--cc-muted);
+}
+
+.proof-title {
+    margin-top: 0.7rem;
+    font-size: 0.84rem;
+    font-weight: 500;
+}
+
+.proof-line {
+    display: block;
+    height: 1px;
+    margin: 0.8rem 0;
+    background: var(--cc-strong);
+}
+
+.proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--cc-strong);
+}
+
+.proof-grid i {
+    display: block;
+    aspect-ratio: 3 / 4;
+    background: var(--cc-elevated);
+}
+
+.home-product {
+    padding-block: clamp(4.5rem, 9vw, 8rem);
+}
+
+.home-product--molejournal {
+    background: var(--mj-paper);
+}
+
+.home-product__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+}
+
+.home-product__copy h2,
+.closet-proof__mast h2 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.home-product__copy p,
+.closet-proof__mast p {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: clamp(1.02rem, 1.5vw, 1.16rem);
+}
+
+.home-product__actions,
+.closet-proof__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    align-items: center;
+    margin-top: 1.7rem;
+}
+
+.journal-mini-timeline {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1.4rem;
+}
+
+.journal-mini-timeline span {
+    position: relative;
+    padding-left: 1.8rem;
+    color: var(--mj-ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+}
+
+.journal-mini-timeline span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.42rem;
+    width: 0.72rem;
+    height: 0.72rem;
+    border: 2px solid var(--brand);
+    border-radius: 50%;
+    background: var(--mj-surface);
+}
+
+.journal-device-composition {
+    margin: 0;
+    text-align: center;
+}
+
+.journal-device-composition img {
+    width: 100%;
+    filter: var(--device-shadow);
+}
+
+.journal-device-composition figcaption,
+.mj-hero__devices figcaption,
+.mj-phone-card figcaption,
+.mj-ipad-card figcaption {
+    margin-top: 0.9rem;
+    color: var(--mj-muted);
+    font-size: 0.94rem;
+}
+
+.home-product--closetcue {
+    background: var(--cc-paper);
+    color: var(--cc-ink);
+}
+
+.closet-proof {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+}
+
+.pressmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0 0 0.85rem;
+    color: var(--cc-ink);
+    font-family: "IBM Plex Mono OFAI", var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.pressmark::before {
+    content: "";
+    width: 0.42rem;
+    height: 0.42rem;
+    background: var(--cc-spot);
+}
+
+.closet-proof__mast h2,
+.cc-title,
+.cc-copy h2,
+.cc-section-head h2,
+.cc-cta h2 {
+    color: var(--cc-ink);
+    font-family: "Bodoni Moda OFAI", Georgia, serif;
+    font-weight: 600;
+}
+
+.closet-proof__mast h2 span {
+    position: relative;
+    display: block;
+}
+
+.closet-proof__sheet,
+.cc-proof-board {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1px;
+    background: var(--cc-strong);
+    border: 1px solid var(--cc-strong);
+    box-shadow: 12px 12px 0 var(--cc-spot);
+}
+
+.proof-frame {
+    position: relative;
+    min-height: 220px;
+    padding: clamp(1rem, 2.2vw, 1.5rem);
+    background:
+        linear-gradient(90deg, rgba(22,20,18,0.05) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(22,20,18,0.05) 1px, transparent 1px),
+        var(--cc-surface);
+    background-size: 28px 28px;
+    color: var(--cc-ink);
+}
+
+.proof-frame--large {
+    grid-row: span 2;
+}
+
+.proof-frame__number {
+    display: inline-block;
+    margin-bottom: 1.2rem;
+    color: var(--cc-muted);
+    font-family: "IBM Plex Mono OFAI", var(--font-mono);
+    font-size: 0.72rem;
+}
+
+.proof-frame strong,
+.proof-frame p,
+.cc-proof-card h3,
+.cc-proof-card p {
+    display: block;
+}
+
+.proof-frame strong,
+.cc-proof-card h3 {
+    color: var(--cc-ink);
+    font-family: "Archivo OFAI", var(--font-sans);
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    line-height: 1.15;
+}
+
+.proof-frame p,
+.cc-proof-card p {
+    margin-top: 0.85rem;
+    color: var(--cc-muted);
+    font-size: 0.96rem;
+    line-height: 1.55;
+}
+
+.coming-soon-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0.58rem 0.9rem;
+    border: 1px solid var(--cc-strong);
+    border-radius: 4px;
+    background: var(--cc-surface);
+    color: var(--cc-ink);
+    font-family: "IBM Plex Mono OFAI", var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.closet-button.button-primary {
+    --btn-bg: var(--cc-ink);
+    --btn-fg: var(--cc-paper);
+    border-radius: 4px;
+    box-shadow: 4px 4px 0 var(--cc-spot);
+}
+
+.product-page--closetcue .button {
+    border-radius: 4px;
+}
+
+/* MoleJournal standalone --------------------------------------------- */
+.product-page--molejournal {
+    background: var(--mj-paper);
+}
+
+.mj-hero,
+.mj-section {
+    padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.mj-hero {
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.58), rgba(255,255,255,0)),
+        var(--mj-paper);
+}
+
+.mj-hero__grid,
+.mj-feature-grid,
+.mj-map-layout,
+.mj-timeline-layout,
+.mj-entry-layout,
+.mj-backup-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4.25rem);
+}
+
+.mj-map-layout,
+.mj-entry-layout {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+}
+
+.mj-title,
+.mj-copy-panel h2,
+.mj-section-head h2,
+.mj-cta h2 {
+    color: var(--mj-ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+}
+
+.mj-title {
+    font-size: clamp(2.7rem, 6vw, 5.3rem);
+    line-height: 0.96;
+}
+
+.mj-lead {
+    margin-top: 1.25rem;
+    color: var(--mj-ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    line-height: 1.35;
+}
+
+.mj-muted,
+.mj-copy-panel p,
+.mj-cta p {
+    margin-top: 1rem;
+    color: var(--mj-muted);
+}
+
+.app-lockup--journal img,
+.cc-lockup img {
+    width: clamp(82px, 9vw, 120px);
+    height: clamp(82px, 9vw, 120px);
+}
+
+.mj-hero__devices {
+    margin: 0;
+}
+
+.mj-notice {
+    grid-column: 1 / -1;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.mj-hero__devices img,
+.mj-map-figure img,
+.mj-phone-card img,
+.mj-ipad-card img,
+.mj-backup-phone img {
+    filter: var(--device-shadow);
+}
+
+.mj-section--wash {
+    background: var(--mj-surface-2);
+}
+
+.mj-copy-panel,
+.mj-cta {
+    padding: clamp(1.3rem, 3vw, 2rem);
+    border: 1px solid var(--mj-line);
+    border-radius: 22px;
+    background: var(--mj-surface);
+    box-shadow: var(--mj-shadow);
+}
+
+.mj-copy-panel h2,
+.mj-section-head h2,
+.mj-cta h2 {
+    font-size: clamp(2rem, 4.2vw, 3.25rem);
+}
+
+.mj-phone-card,
+.mj-ipad-card,
+.mj-map-figure,
+.mj-backup-phone {
+    margin: 0;
+    text-align: center;
+}
+
+.mj-phone-card img,
+.mj-backup-phone img {
+    width: min(64%, 300px);
+    margin-inline: auto;
+}
+
+.mj-ipad-card img {
+    width: min(82%, 540px);
+    margin-inline: auto;
+}
+
+.mj-map-figure img {
+    width: 100%;
+}
+
+.mj-checklist {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1.3rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mj-checklist li {
+    position: relative;
+    padding-left: 1.6rem;
+    color: var(--mj-ink);
+}
+
+.mj-checklist li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.48rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--brand);
+}
+
+.mj-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.3rem;
+    color: var(--mj-muted);
+    font-size: 0.94rem;
+}
+
+.mj-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.mj-dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+}
+
+.mj-dot--active { background: var(--mj-sage); }
+.mj-dot--biopsied { background: var(--mj-blue); }
+
+.mj-timeline-sample {
+    position: relative;
+    display: grid;
+    gap: 0;
+    margin-top: 1.5rem;
+    padding-left: 1.4rem;
+}
+
+.mj-timeline-sample::before {
+    content: "";
+    position: absolute;
+    left: 0.34rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: #e7cfb4;
+}
+
+.mj-timeline-sample div {
+    position: relative;
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: 0.75rem;
+    padding-block: 0.65rem;
+}
+
+.mj-timeline-sample div::before {
+    content: "";
+    position: absolute;
+    left: -1.34rem;
+    top: 1.1rem;
+    width: 0.72rem;
+    height: 0.72rem;
+    border: 2px solid var(--mj-sage);
+    border-radius: 50%;
+    background: var(--mj-surface);
+}
+
+.mj-timeline-sample time {
+    color: var(--mj-muted);
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+}
+
+.mj-timeline-sample span {
+    color: var(--mj-ink);
+    font-weight: 650;
+}
+
+.mj-section-head {
+    max-width: 760px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.mj-faq .faq-item {
+    border-color: var(--mj-line);
+    border-radius: 18px;
+    background: var(--mj-surface);
+}
+
+.mj-cta {
+    text-align: center;
+}
+
+.mj-cta .button-row {
+    justify-content: center;
+}
+
+/* ClosetCue standalone ----------------------------------------------- */
+.product-page--closetcue {
+    --bg: var(--cc-paper);
+    background: var(--cc-paper);
+    color: var(--cc-ink);
+}
+
+.cc-hero,
+.cc-section {
+    padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.cc-hero {
+    background:
+        repeating-linear-gradient(90deg, rgba(22,20,18,0.045) 0 1px, transparent 1px 54px),
+        var(--cc-paper);
+}
+
+.cc-hero__grid,
+.cc-two-col,
+.cc-brief-layout,
+.cc-proof-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+}
+
+.cc-two-col--reverse {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+}
+
+.cc-lockup {
+    display: flex;
+    align-items: center;
+    gap: 0.95rem;
+    margin-bottom: 1.6rem;
+}
+
+.cc-lockup img {
+    width: clamp(88px, 7vw, 100px);
+    height: clamp(88px, 7vw, 100px);
+    border-radius: 22px;
+    box-shadow: 8px 8px 0 var(--cc-spot);
+}
+
+.cc-title {
+    position: relative;
+    display: inline-block;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 0.88;
+}
+
+.cc-title::after {
+    content: "ClosetCue";
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    z-index: -1;
+    color: var(--cc-spot);
+}
+
+.cc-lead {
+    color: var(--cc-ink);
+    font-family: "Bodoni Moda OFAI", Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    font-weight: 600;
+    line-height: 1.03;
+}
+
+.cc-hero__copy > p:not(.pressmark):not(.cc-lead),
+.cc-copy p,
+.cc-cta p {
+    margin-top: 1rem;
+    color: var(--cc-muted);
+    font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+}
+
+.cc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 1.7rem;
+}
+
+.cc-actions--center {
+    justify-content: center;
+}
+
+.cc-proof-board {
+    transform: rotate(-1deg);
+}
+
+.cc-section--paper {
+    background: var(--cc-surface);
+}
+
+.cc-section--ink {
+    background: var(--cc-dark);
+    color: var(--cc-paper);
+}
+
+.cc-copy h2,
+.cc-section-head h2,
+.cc-cta h2 {
+    font-size: clamp(2.2rem, 5vw, 4.1rem);
+    line-height: 0.98;
+}
+
+.cc-copy--dark h2,
+.cc-copy--dark p,
+.cc-copy--dark .pressmark {
+    color: var(--cc-paper);
+}
+
+.cc-copy--dark .pressmark::before {
+    background: var(--cc-spot);
+}
+
+.cc-index-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.9rem;
+    margin-top: 1.4rem;
+    color: var(--cc-ink);
+    font-family: "IBM Plex Mono OFAI", var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.cc-index-line span {
+    border-bottom: 2px solid var(--cc-spot);
+}
+
+.cc-contact-sheet,
+.cc-proof-card,
+.cc-brief,
+.cc-outfit-proof,
+.cc-cta {
+    border: 1px solid var(--cc-strong);
+    background: var(--cc-surface);
+    color: var(--cc-ink);
+}
+
+.cc-contact-sheet,
+.cc-proof-card,
+.cc-brief,
+.cc-outfit-proof {
+    position: relative;
+    padding: clamp(1.1rem, 2.4vw, 1.6rem);
+}
+
+.cc-contact-sheet::before,
+.cc-contact-sheet::after,
+.cc-proof-card::before,
+.cc-proof-card::after,
+.cc-brief::before,
+.cc-brief::after,
+.cc-outfit-proof::before,
+.cc-outfit-proof::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+}
+
+.cc-contact-sheet::before,
+.cc-proof-card::before,
+.cc-brief::before,
+.cc-outfit-proof::before {
+    top: -1px;
+    left: -1px;
+    border-top: 1px solid var(--cc-ink);
+    border-left: 1px solid var(--cc-ink);
+}
+
+.cc-contact-sheet::after,
+.cc-proof-card::after,
+.cc-brief::after,
+.cc-outfit-proof::after {
+    right: -1px;
+    bottom: -1px;
+    border-right: 1px solid var(--cc-ink);
+    border-bottom: 1px solid var(--cc-ink);
+}
+
+.cc-contact-label {
+    display: block;
+    margin-bottom: 1rem;
+    font-family: "IBM Plex Mono OFAI", var(--font-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+}
+
+.cc-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--cc-strong);
+}
+
+.cc-contact-grid i {
+    display: block;
+    aspect-ratio: 3 / 4;
+    background:
+        linear-gradient(135deg, rgba(243,113,0,0.18), rgba(22,20,18,0.04)),
+        var(--cc-elevated);
+}
+
+.cc-swatch-row {
+    display: flex;
+    gap: 0.45rem;
+    margin-top: 1rem;
+}
+
+.cc-swatch-row i {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--cc-strong);
+}
+
+.cc-brief {
+    display: grid;
+    gap: 1px;
+    background: var(--cc-strong);
+    padding: 0;
+}
+
+.cc-brief > * {
+    background: var(--cc-surface);
+}
+
+.cc-brief .proof-frame__number,
+.cc-brief p {
+    padding: 1rem;
+}
+
+.cc-brief div {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+.cc-brief b,
+.cc-brief span,
+.cc-brief p {
+    font-family: "IBM Plex Mono OFAI", var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.cc-brief b {
+    text-transform: uppercase;
+}
+
+.cc-outfit-proof {
+    box-shadow: 12px 12px 0 var(--cc-spot);
+}
+
+.cc-proof-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.press-stamp {
+    display: inline-grid;
+    place-items: center;
+    width: 76px;
+    height: 76px;
+    border: 2px solid var(--cc-spot);
+    border-radius: 50%;
+    color: var(--cc-ink);
+    font-family: "IBM Plex Mono OFAI", var(--font-mono);
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 0.9;
+    text-align: center;
+    transform: rotate(-8deg);
+}
+
+.press-stamp small {
+    font-size: 0.48rem;
+    text-transform: uppercase;
+}
+
+.cc-outfit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    margin-top: 1.2rem;
+    background: var(--cc-strong);
+}
+
+.cc-outfit-grid span {
+    display: grid;
+    place-items: end start;
+    min-height: 150px;
+    padding: 0.8rem;
+    background: var(--cc-elevated);
+    color: var(--cc-muted);
+    font-family: "IBM Plex Mono OFAI", var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+}
+
+.cc-explainer {
+    margin-top: 1.2rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--cc-strong);
+}
+
+.cc-explainer strong {
+    color: var(--cc-ink);
+}
+
+.cc-explainer p {
+    margin-top: 0.45rem;
+    color: var(--cc-muted);
+}
+
+.cc-trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--cc-strong);
+    border: 1px solid var(--cc-strong);
+}
+
+.cc-trust-grid .cc-proof-card {
+    border: 0;
+}
+
+.cc-section-head {
+    max-width: 760px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.cc-faq .faq-item {
+    border-radius: 0;
+    border-color: var(--cc-hairline);
+    background: var(--cc-paper);
+    box-shadow: none;
+}
+
+.cc-cta {
+    padding: clamp(2rem, 5vw, 3.6rem);
+    text-align: center;
+    box-shadow: 12px 12px 0 var(--cc-spot);
+}
+
+.cc-cta .pressmark {
+    justify-content: center;
+}
+
+/* Overhaul responsive -------------------------------------------------- */
+@media (max-width: 1000px) {
+    .studio-hero__inner,
+    .home-product__grid,
+    .closet-proof,
+    .mj-hero__grid,
+    .mj-feature-grid,
+    .mj-map-layout,
+    .mj-timeline-layout,
+    .mj-entry-layout,
+    .mj-backup-layout,
+    .cc-hero__grid,
+    .cc-two-col,
+    .cc-two-col--reverse,
+    .cc-brief-layout,
+    .cc-proof-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .studio-hero__copy,
+    .home-product__copy,
+    .closet-proof__mast {
+        max-width: 760px;
+    }
+
+    .studio-hero__tableau {
+        min-height: clamp(280px, 42vw, 380px);
+    }
+
+    .cc-proof-board,
+    .closet-proof__sheet {
+        transform: none;
+    }
+
+    .cc-trust-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .studio-hero {
+        padding-top: 2.2rem;
+    }
+
+    .studio-hero__tableau {
+        min-height: 390px;
+    }
+
+    .studio-hero__mole {
+        width: 100%;
+        right: 0;
+    }
+
+    .studio-hero__phone {
+        width: 31%;
+        min-width: 104px;
+    }
+
+    .studio-hero__proof {
+        width: 48%;
+        left: 0;
+        padding: 0.75rem;
+    }
+
+    .closet-proof__sheet,
+    .cc-proof-board {
+        grid-template-columns: 1fr;
+        box-shadow: 7px 7px 0 var(--cc-spot);
+    }
+
+    .proof-frame--large {
+        grid-row: auto;
+    }
+
+    .proof-frame {
+        min-height: 170px;
+    }
+
+    .mj-phone-card img,
+    .mj-backup-phone img {
+        width: min(76%, 280px);
+    }
+
+    .cc-contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cc-brief div {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .studio-hero {
+        padding-bottom: 1rem;
+    }
+
+    .studio-hero__actions .button,
+    .home-product__actions .button,
+    .closet-proof__actions .button,
+    .cc-actions .button,
+    .cc-actions .coming-soon-pill {
+        width: 100%;
+    }
+
+    .cc-lockup {
+        align-items: flex-start;
+    }
+
+    .cc-lockup img {
+        border-radius: 18px;
+    }
+
+    .cc-outfit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mj-timeline-sample div {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+    }
+
+    .studio-hero__actions .button {
+        width: auto;
+    }
+
+    .studio-hero__actions .button-primary {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .studio-hero__actions .button-secondary {
+        flex: 0 0 auto;
+    }
+
+    .studio-hero__principles {
+        gap: 0.45rem;
+        margin-top: 1.05rem;
+    }
+
+    .studio-hero__principles span {
+        padding: 0.36rem 0.48rem;
+        font-size: 0.68rem;
+    }
+
+    .studio-hero__tableau {
+        min-height: 135px;
+        margin-top: 0.5rem;
+    }
+
+    .studio-hero__mole {
+        width: 90%;
+        bottom: 0;
+    }
+
+    .studio-hero__phone {
+        width: 21%;
+    }
+
+    .studio-hero__proof {
+        width: 40%;
+        padding: 0.55rem;
+        box-shadow: 5px 5px 0 var(--cc-spot);
+    }
+
+    .studio-hero__proof .proof-grid {
+        display: none;
+    }
+
+    .product-page--molejournal .app-lockup {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .product-page--molejournal .mj-title {
+        font-size: clamp(2.45rem, 14vw, 3.15rem);
     }
 }
