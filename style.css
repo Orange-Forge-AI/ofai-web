@@ -2106,15 +2106,31 @@ h4,
 
 .studio-hero__mole,
 .studio-hero__phone,
+.studio-hero__closet,
 .studio-hero__proof {
     position: absolute;
     filter: var(--device-shadow);
 }
 
 .studio-hero__mole {
-    right: 0;
-    bottom: 4%;
-    width: min(92%, 760px);
+    right: -3%;
+    bottom: 0;
+    z-index: 1;
+    width: min(72%, 560px);
+}
+
+.studio-hero__closet {
+    left: 0;
+    top: 2%;
+    z-index: 2;
+    width: min(58%, 430px);
+}
+
+.studio-hero__mole img,
+.studio-hero__closet img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .studio-hero__phone {
@@ -2308,6 +2324,33 @@ h4,
     background: var(--cc-strong);
     border: 1px solid var(--cc-strong);
     box-shadow: 12px 12px 0 var(--cc-spot);
+}
+
+.closet-proof__image,
+.cc-showcase {
+    margin: 0;
+    text-align: center;
+}
+
+.closet-proof__image img,
+.cc-showcase img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--cc-strong);
+    background: var(--cc-surface);
+    box-shadow: 12px 12px 0 var(--cc-spot);
+}
+
+.closet-proof__image figcaption,
+.cc-showcase figcaption,
+.cc-phone-shot figcaption {
+    margin-top: 0.85rem;
+    color: var(--cc-muted);
+    font-family: "IBM Plex Mono OFAI", var(--font-mono);
+    font-size: 0.74rem;
+    line-height: 1.45;
+    text-transform: uppercase;
 }
 
 .proof-frame {
@@ -2723,6 +2766,15 @@ h4,
     transform: rotate(-1deg);
 }
 
+.cc-showcase--hero {
+    transform: rotate(-1deg);
+}
+
+.cc-showcase--hero img {
+    max-width: 680px;
+    margin-inline: auto;
+}
+
 .cc-section--paper {
     background: var(--cc-surface);
 }
@@ -2763,6 +2815,50 @@ h4,
 
 .cc-index-line span {
     border-bottom: 2px solid var(--cc-spot);
+}
+
+.cc-section-head > p:not(.pressmark) {
+    margin-top: 1rem;
+    color: var(--cc-muted);
+    font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+}
+
+.cc-phone-shot {
+    margin: 0;
+    text-align: center;
+}
+
+.cc-phone-shot img {
+    display: block;
+    width: min(64%, 320px);
+    height: auto;
+    margin-inline: auto;
+    filter: var(--device-shadow);
+}
+
+.cc-phone-shot--dark figcaption {
+    color: rgba(255, 252, 246, 0.72);
+}
+
+.cc-phone-shot--mini img {
+    width: 100%;
+    max-width: 230px;
+}
+
+.cc-shot-strip,
+.cc-shot-gallery {
+    display: grid;
+    gap: clamp(0.9rem, 2vw, 1.35rem);
+    align-items: start;
+}
+
+.cc-shot-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cc-shot-gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: clamp(1.6rem, 3vw, 2.4rem);
 }
 
 .cc-contact-sheet,
@@ -2962,8 +3058,20 @@ h4,
     border: 1px solid var(--cc-strong);
 }
 
+.cc-trust-grid--shots {
+    margin-top: clamp(1.6rem, 3vw, 2.4rem);
+}
+
 .cc-trust-grid .cc-proof-card {
     border: 0;
+}
+
+.cc-proof-card--with-shot img {
+    display: block;
+    width: min(74%, 230px);
+    height: auto;
+    margin: 0 auto 1.2rem;
+    filter: var(--device-shadow);
 }
 
 .cc-section-head {
@@ -3015,11 +3123,12 @@ h4,
     }
 
     .studio-hero__tableau {
-        min-height: clamp(280px, 42vw, 380px);
+        min-height: clamp(360px, 58vw, 520px);
     }
 
     .cc-proof-board,
-    .closet-proof__sheet {
+    .closet-proof__sheet,
+    .cc-showcase--hero {
         transform: none;
     }
 
@@ -3034,12 +3143,19 @@ h4,
     }
 
     .studio-hero__tableau {
-        min-height: 390px;
+        min-height: clamp(320px, 68vw, 440px);
     }
 
     .studio-hero__mole {
-        width: 100%;
+        width: 72%;
         right: 0;
+        bottom: 0;
+    }
+
+    .studio-hero__closet {
+        width: 58%;
+        left: 0;
+        top: 0;
     }
 
     .studio-hero__phone {
@@ -3059,6 +3175,11 @@ h4,
         box-shadow: 7px 7px 0 var(--cc-spot);
     }
 
+    .closet-proof__image img,
+    .cc-showcase img {
+        box-shadow: 7px 7px 0 var(--cc-spot);
+    }
+
     .proof-frame--large {
         grid-row: auto;
     }
@@ -3068,8 +3189,23 @@ h4,
     }
 
     .mj-phone-card img,
-    .mj-backup-phone img {
+    .mj-backup-phone img,
+    .cc-phone-shot img {
         width: min(76%, 280px);
+    }
+
+    .cc-phone-shot--mini img {
+        width: 100%;
+    }
+
+    .cc-shot-strip {
+        grid-template-columns: repeat(3, minmax(132px, 1fr));
+        overflow-x: auto;
+        padding-bottom: 0.25rem;
+    }
+
+    .cc-shot-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .cc-contact-grid {
@@ -3135,13 +3271,17 @@ h4,
     }
 
     .studio-hero__tableau {
-        min-height: 135px;
+        min-height: clamp(250px, 68vw, 380px);
         margin-top: 0.5rem;
     }
 
     .studio-hero__mole {
-        width: 90%;
+        width: 74%;
         bottom: 0;
+    }
+
+    .studio-hero__closet {
+        width: 59%;
     }
 
     .studio-hero__phone {
@@ -3156,6 +3296,14 @@ h4,
 
     .studio-hero__proof .proof-grid {
         display: none;
+    }
+
+    .cc-shot-gallery {
+        gap: 0.75rem;
+    }
+
+    .cc-phone-shot--mini figcaption {
+        font-size: 0.66rem;
     }
 
     .product-page--molejournal .app-lockup {
