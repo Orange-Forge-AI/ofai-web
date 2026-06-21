@@ -2035,7 +2035,7 @@ h4,
 .studio-hero {
     position: relative;
     overflow: hidden;
-    padding-block: clamp(2.4rem, 4.8vw, 4rem) clamp(1.25rem, 2.2vw, 1.8rem);
+    padding-block: clamp(2.7rem, 5.2vw, 4.8rem) clamp(3.8rem, 7vw, 5.6rem);
     background:
         linear-gradient(180deg, rgba(255,255,255,0.52), rgba(251,249,246,0) 58%),
         repeating-linear-gradient(90deg, rgba(28,24,19,0.035) 0 1px, transparent 1px 62px),
@@ -2045,7 +2045,7 @@ h4,
 .studio-hero__backdrop {
     position: absolute;
     inset: auto 0 0;
-    height: 32%;
+    height: 42%;
     border-top: 1px solid var(--line);
     background: linear-gradient(180deg, rgba(244, 239, 232, 0), var(--bg-2));
     pointer-events: none;
@@ -2054,17 +2054,18 @@ h4,
 .studio-hero__inner {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
-    align-items: center;
-    gap: clamp(2rem, 5vw, 4.5rem);
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: clamp(2.1rem, 4.5vw, 3.8rem);
 }
 
 .studio-hero__copy {
-    max-width: 650px;
+    max-width: 920px;
 }
 
 .studio-hero__title {
-    font-size: clamp(2.8rem, 5.2vw, 5.25rem);
+    max-width: 980px;
+    font-size: clamp(2.9rem, 6.4vw, 6.1rem);
     line-height: 1;
 }
 
@@ -2075,117 +2076,63 @@ h4,
 
 .studio-hero__lead {
     margin-top: 1.35rem;
-    max-width: 48ch;
+    max-width: 56ch;
     color: var(--ink-2);
     font-size: clamp(1.08rem, 1.8vw, 1.28rem);
     line-height: 1.55;
 }
 
-.studio-hero__actions,
-.studio-hero__principles {
+.studio-hero__principle-line {
+    max-width: 100%;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
+
+.studio-hero__actions {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
     margin-top: 1.6rem;
 }
 
-.studio-hero__principles span {
-    padding: 0.48rem 0.7rem;
-    border: 1px solid var(--line);
-    border-radius: var(--r-xs);
-    background: rgba(255,255,255,0.6);
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-}
-
 .studio-hero__tableau {
     position: relative;
-    min-height: clamp(430px, 45vw, 640px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.25rem, 3vw, 2.4rem);
+    align-items: end;
 }
 
-.studio-hero__mole,
-.studio-hero__phone,
-.studio-hero__closet,
-.studio-hero__proof {
-    position: absolute;
+.studio-hero__product {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: clamp(250px, 27vw, 380px);
+    margin: 0;
+    padding: clamp(0.2rem, 1vw, 0.8rem);
+    aspect-ratio: 16 / 10;
+}
+
+.studio-hero__product img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     filter: var(--device-shadow);
 }
 
-.studio-hero__mole {
-    right: -3%;
-    bottom: 0;
-    z-index: 1;
-    width: min(72%, 560px);
-}
-
-.studio-hero__closet {
-    left: 0;
-    top: 2%;
-    z-index: 2;
-    width: min(58%, 430px);
-}
-
-.studio-hero__mole img,
-.studio-hero__closet img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.studio-hero__phone {
-    left: 0;
-    bottom: 0;
-    width: min(24%, 170px);
-}
-
-.studio-hero__proof {
-    top: 2%;
-    left: 5%;
-    width: min(42%, 280px);
-    padding: 1rem;
-    border: 1px solid var(--cc-strong);
-    background: var(--cc-surface);
-    color: var(--cc-ink);
-    box-shadow: 10px 10px 0 var(--cc-spot);
-}
-
-.proof-label,
-.proof-title {
-    display: block;
-    font-family: "IBM Plex Mono OFAI", var(--font-mono);
-    text-transform: uppercase;
-}
-
-.proof-label {
-    font-size: 0.62rem;
-    color: var(--cc-muted);
-}
-
-.proof-title {
-    margin-top: 0.7rem;
-    font-size: 0.84rem;
-    font-weight: 500;
-}
-
-.proof-line {
-    display: block;
+.studio-hero__product figcaption {
+    position: absolute;
+    width: 1px;
     height: 1px;
-    margin: 0.8rem 0;
-    background: var(--cc-strong);
-}
-
-.proof-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: var(--cc-strong);
-}
-
-.proof-grid i {
-    display: block;
-    aspect-ratio: 3 / 4;
-    background: var(--cc-elevated);
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .home-product {
@@ -2198,9 +2145,9 @@ h4,
 
 .home-product__grid {
     display: grid;
-    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    grid-template-columns: minmax(0, 0.68fr) minmax(0, 1.32fr);
     align-items: center;
-    gap: clamp(2rem, 5vw, 4rem);
+    gap: clamp(1.8rem, 4vw, 3.2rem);
 }
 
 .home-product__copy h2,
@@ -2226,28 +2173,35 @@ h4,
 
 .journal-mini-timeline {
     display: grid;
-    gap: 0.75rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
     margin-top: 1.4rem;
 }
 
 .journal-mini-timeline span {
-    position: relative;
-    padding-left: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.58rem;
+    min-height: 44px;
+    padding: 0.66rem 0.78rem;
+    border: 1px solid var(--mj-line);
+    border-radius: 10px;
+    background: rgba(255, 252, 246, 0.72);
     color: var(--mj-ink);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.05rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.25;
 }
 
 .journal-mini-timeline span::before {
     content: "";
-    position: absolute;
-    left: 0;
-    top: 0.42rem;
-    width: 0.72rem;
-    height: 0.72rem;
-    border: 2px solid var(--brand);
+    flex: 0 0 auto;
+    width: 0.42rem;
+    height: 0.42rem;
     border-radius: 50%;
-    background: var(--mj-surface);
+    background: var(--brand);
+    box-shadow: 0 0 0 4px rgba(243, 113, 0, 0.10);
 }
 
 .journal-device-composition {
@@ -2256,7 +2210,8 @@ h4,
 }
 
 .journal-device-composition img {
-    width: 100%;
+    width: min(100%, 1040px);
+    margin-inline: auto;
     filter: var(--device-shadow);
 }
 
@@ -2316,16 +2271,6 @@ h4,
     display: block;
 }
 
-.closet-proof__sheet,
-.cc-proof-board {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 1px;
-    background: var(--cc-strong);
-    border: 1px solid var(--cc-strong);
-    box-shadow: 12px 12px 0 var(--cc-spot);
-}
-
 .closet-proof__image,
 .cc-showcase {
     margin: 0;
@@ -2337,9 +2282,10 @@ h4,
     display: block;
     width: 100%;
     height: auto;
-    border: 1px solid var(--cc-strong);
-    background: var(--cc-surface);
-    box-shadow: 12px 12px 0 var(--cc-spot);
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    filter: var(--device-shadow);
 }
 
 .closet-proof__image figcaption,
@@ -2353,38 +2299,11 @@ h4,
     text-transform: uppercase;
 }
 
-.proof-frame {
-    position: relative;
-    min-height: 220px;
-    padding: clamp(1rem, 2.2vw, 1.5rem);
-    background:
-        linear-gradient(90deg, rgba(22,20,18,0.05) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(22,20,18,0.05) 1px, transparent 1px),
-        var(--cc-surface);
-    background-size: 28px 28px;
-    color: var(--cc-ink);
-}
-
-.proof-frame--large {
-    grid-row: span 2;
-}
-
-.proof-frame__number {
-    display: inline-block;
-    margin-bottom: 1.2rem;
-    color: var(--cc-muted);
-    font-family: "IBM Plex Mono OFAI", var(--font-mono);
-    font-size: 0.72rem;
-}
-
-.proof-frame strong,
-.proof-frame p,
 .cc-proof-card h3,
 .cc-proof-card p {
     display: block;
 }
 
-.proof-frame strong,
 .cc-proof-card h3 {
     color: var(--cc-ink);
     font-family: "Archivo OFAI", var(--font-sans);
@@ -2392,7 +2311,6 @@ h4,
     line-height: 1.15;
 }
 
-.proof-frame p,
 .cc-proof-card p {
     margin-top: 0.85rem;
     color: var(--cc-muted);
@@ -2459,6 +2377,16 @@ h4,
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
 }
 
+.mj-hero__grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: clamp(2rem, 4.8vw, 3.8rem);
+}
+
+.mj-hero__copy {
+    max-width: 780px;
+}
+
 .mj-title,
 .mj-copy-panel h2,
 .mj-section-head h2,
@@ -2496,6 +2424,11 @@ h4,
 
 .mj-hero__devices {
     margin: 0;
+}
+
+.mj-hero__devices img {
+    width: min(100%, 1120px);
+    margin-inline: auto;
 }
 
 .mj-notice {
@@ -2700,6 +2633,12 @@ h4,
     gap: clamp(2rem, 5vw, 4rem);
 }
 
+.cc-hero__grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: clamp(2rem, 4.8vw, 3.8rem);
+}
+
 .cc-two-col--reverse {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
 }
@@ -2762,16 +2701,12 @@ h4,
     justify-content: center;
 }
 
-.cc-proof-board {
-    transform: rotate(-1deg);
-}
-
 .cc-showcase--hero {
-    transform: rotate(-1deg);
+    transform: none;
 }
 
 .cc-showcase--hero img {
-    max-width: 680px;
+    max-width: 1120px;
     margin-inline: auto;
 }
 
@@ -2960,7 +2895,6 @@ h4,
     background: var(--cc-surface);
 }
 
-.cc-brief .proof-frame__number,
 .cc-brief p {
     padding: 1rem;
 }
@@ -3123,11 +3057,9 @@ h4,
     }
 
     .studio-hero__tableau {
-        min-height: clamp(360px, 58vw, 520px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .cc-proof-board,
-    .closet-proof__sheet,
     .cc-showcase--hero {
         transform: none;
     }
@@ -3143,49 +3075,12 @@ h4,
     }
 
     .studio-hero__tableau {
-        min-height: clamp(320px, 68vw, 440px);
-    }
-
-    .studio-hero__mole {
-        width: 72%;
-        right: 0;
-        bottom: 0;
-    }
-
-    .studio-hero__closet {
-        width: 58%;
-        left: 0;
-        top: 0;
-    }
-
-    .studio-hero__phone {
-        width: 31%;
-        min-width: 104px;
-    }
-
-    .studio-hero__proof {
-        width: 48%;
-        left: 0;
-        padding: 0.75rem;
-    }
-
-    .closet-proof__sheet,
-    .cc-proof-board {
         grid-template-columns: 1fr;
-        box-shadow: 7px 7px 0 var(--cc-spot);
+        gap: 1.5rem;
     }
 
-    .closet-proof__image img,
-    .cc-showcase img {
-        box-shadow: 7px 7px 0 var(--cc-spot);
-    }
-
-    .proof-frame--large {
-        grid-row: auto;
-    }
-
-    .proof-frame {
-        min-height: 170px;
+    .studio-hero__product {
+        min-height: clamp(220px, 64vw, 380px);
     }
 
     .mj-phone-card img,
@@ -3260,42 +3155,16 @@ h4,
         flex: 0 0 auto;
     }
 
-    .studio-hero__principles {
-        gap: 0.45rem;
-        margin-top: 1.05rem;
-    }
-
-    .studio-hero__principles span {
-        padding: 0.36rem 0.48rem;
-        font-size: 0.68rem;
-    }
-
     .studio-hero__tableau {
-        min-height: clamp(250px, 68vw, 380px);
         margin-top: 0.5rem;
     }
 
-    .studio-hero__mole {
-        width: 74%;
-        bottom: 0;
+    .studio-hero__product {
+        min-height: clamp(190px, 70vw, 310px);
     }
 
-    .studio-hero__closet {
-        width: 59%;
-    }
-
-    .studio-hero__phone {
-        width: 21%;
-    }
-
-    .studio-hero__proof {
-        width: 40%;
-        padding: 0.55rem;
-        box-shadow: 5px 5px 0 var(--cc-spot);
-    }
-
-    .studio-hero__proof .proof-grid {
-        display: none;
+    .journal-mini-timeline {
+        grid-template-columns: 1fr;
     }
 
     .cc-shot-gallery {
